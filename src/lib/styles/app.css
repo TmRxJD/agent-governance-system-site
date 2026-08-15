@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+:root {
+	--ags-bg: #06080f;
+	--ags-bg-elevated: #0c1220;
+	--ags-fg: #e8eef8;
+	--ags-muted: #8b9bb4;
+	--ags-cyan: #22d3ee;
+	--ags-violet: #a78bfa;
+	--ags-magenta: #e879f9;
+	--ags-glass: rgba(14, 22, 40, 0.62);
+	--ags-border: rgba(34, 211, 238, 0.18);
+	--ags-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+	--ags-font: 'Segoe UI', 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+	--ags-mono: ui-monospace, 'Cascadia Code', 'SF Mono', Menlo, monospace;
+}
+
+html {
+	color-scheme: dark;
+}
+
+html,
+body {
+	margin: 0;
+	min-height: 100%;
+	font-family: var(--ags-font);
+	background:
+		radial-gradient(1200px 700px at 12% -10%, rgba(34, 211, 238, 0.12), transparent 55%),
+		radial-gradient(900px 600px at 90% 0%, rgba(167, 139, 250, 0.14), transparent 50%),
+		radial-gradient(800px 500px at 50% 100%, rgba(232, 121, 249, 0.08), transparent 45%),
+		var(--ags-bg);
+	color: var(--ags-fg);
+}
+
+::selection {
+	background: rgba(34, 211, 238, 0.35);
+}
+
+.glass {
+	background: var(--ags-glass);
+	border: 1px solid var(--ags-border);
+	box-shadow: var(--ags-shadow);
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+}
+
+.neon-text {
+	background: linear-gradient(120deg, var(--ags-cyan), var(--ags-violet), var(--ags-magenta));
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+[data-inview='true'] {
+	animation: ags-fade-up 0.55s ease both;
+}
+
+@keyframes ags-fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes ags-pulse {
+	0%,
+	100% {
+		opacity: 0.45;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.04);
+	}
+}
+
+@keyframes ags-flow {
+	0% {
+		stroke-dashoffset: 40;
+	}
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	[data-inview='true'],
+	.ags-pulse,
+	.ags-flow {
+		animation: none !important;
+	}
+}
+
+.ags-pulse {
+	animation: ags-pulse 1.8s ease-in-out infinite;
+}
+
+.ags-flow {
+	stroke-dasharray: 8 6;
+	animation: ags-flow 1.2s linear infinite;
+}
+
+.prose-ags {
+	--tw-prose-body: var(--ags-fg);
+	--tw-prose-headings: var(--ags-fg);
+	--tw-prose-links: var(--ags-cyan);
+	--tw-prose-bold: var(--ags-fg);
+	--tw-prose-code: var(--ags-cyan);
+	--tw-prose-pre-bg: #0a101c;
+	--tw-prose-hr: var(--ags-border);
+	--tw-prose-quotes: var(--ags-muted);
+}

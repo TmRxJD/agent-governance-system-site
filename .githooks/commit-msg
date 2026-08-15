@@ -1,0 +1,4 @@
+#!/bin/sh
+# Site-local commit-msg hook — no proprietary AGS engine.
+MSG_FILE="$1"
+node "$(dirname "$0")/../scripts/validate-site-commit-msg.mjs" "$MSG_FILE"
