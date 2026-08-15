@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { href } from '$lib/paths';
+	import SectionHeader from './SectionHeader.svelte';
 
 	const extras = [
 		{
@@ -57,13 +58,16 @@
 	];
 </script>
 
-<section id="engines" class="scroll-mt-20 border-t border-white/[0.06] py-12 sm:py-16">
+<section id="engines" class="scroll-mt-20 border-t border-white/[0.06] bg-black/20 py-12 sm:py-16">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-		<p class="text-sm font-medium text-slate-500">Additional engines</p>
-		<h2 class="mt-2 text-2xl font-semibold tracking-tight text-white">The rest of the system.</h2>
-		<p class="mt-2 max-w-xl text-slate-400">Supporting components that reinforce the three pillars.</p>
+		<SectionHeader
+			eyebrow="Additional engines"
+			title="The rest of the system."
+			subheading="Supporting components that reinforce the three pillars."
+			tone="muted"
+		/>
 
-		<div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+		<div class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 			{#each extras as eng (eng.name)}
 				<a
 					href={href('/docs/')}
@@ -71,6 +75,7 @@
 				>
 					<p class="font-medium text-slate-100">{eng.name}</p>
 					<p class="mt-2 text-sm leading-relaxed text-slate-400">{eng.blurb}</p>
+					<p class="mt-3 text-xs text-slate-600">docs →</p>
 				</a>
 			{/each}
 		</div>

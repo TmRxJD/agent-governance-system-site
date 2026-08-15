@@ -1,5 +1,6 @@
 <script lang="ts">
-	import ComparePanel from './ComparePanel.svelte';
+	import SectionHeader from './SectionHeader.svelte';
+	import ComparisonSection from './ComparisonSection.svelte';
 
 	const beforeItems = [
 		{
@@ -58,31 +59,22 @@
 
 <section id="discipline" class="scroll-mt-20 border-t border-white/[0.06] py-12 sm:py-16">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-		<p class="text-sm font-medium text-cyan-300/90">1 · Agent Discipline & Drift Prevention</p>
-		<h2 class="mt-2 max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-			AI coding breaks down in ways that aren’t obvious — until they cost you hours.
-		</h2>
-		<p class="mt-3 max-w-3xl text-base leading-relaxed text-slate-400">
+		<SectionHeader
+			numeral="1"
+			title="Agent Discipline & Drift Prevention"
+			subheading="AI coding breaks down in ways that aren’t obvious — until they cost you hours."
+			tone="cyan"
+		/>
+		<p class="mb-8 max-w-3xl text-base leading-relaxed text-slate-400">
 			Ungoverned agents don’t fail loudly. They fail in subtle, compounding ways that look correct in isolation
 			but fracture the project over time.
 		</p>
-
-		<div class="mt-8 grid gap-4 lg:grid-cols-2" data-ags-demo="discipline">
-			<ComparePanel
-				variant="before"
-				heading="AI coding without AGS"
-				items={beforeItems}
-				closing="These failures accumulate. They create long-term debt. They slow every future change."
-			/>
-			<ComparePanel
-				variant="after"
-				heading="AI coding with AGS"
-				items={afterItems}
-				closing="This is what disciplined AI coding looks like."
-			/>
-		</div>
-		<p class="mt-4 max-w-3xl text-sm leading-relaxed text-slate-500">
-			AGS forces agents to behave like part of the engineering system, not a free-floating text generator.
-		</p>
+		<ComparisonSection
+			beforeHeading="AI coding without AGS"
+			afterHeading="AI coding with AGS"
+			{beforeItems}
+			{afterItems}
+			closing="AGS forces agents to behave like part of the engineering system, not a free-floating text generator."
+		/>
 	</div>
 </section>

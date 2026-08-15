@@ -1,5 +1,6 @@
 <script lang="ts">
-	import ComparePanel from './ComparePanel.svelte';
+	import SectionHeader from './SectionHeader.svelte';
+	import ComparisonSection from './ComparisonSection.svelte';
 
 	const beforeItems = [
 		{
@@ -56,30 +57,24 @@
 	];
 </script>
 
-<section id="repo" class="scroll-mt-20 border-t border-white/[0.06] py-12 sm:py-16">
+<section id="repo" class="scroll-mt-20 border-t border-white/[0.06] bg-black/15 py-12 sm:py-16">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-		<p class="text-sm font-medium text-violet-300/90">2 · Repo Governance & Structural Integrity</p>
-		<h2 class="mt-2 max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-			Projects don’t fall apart because of one big mistake — they fall apart from slow structural drift.
-		</h2>
-		<p class="mt-3 max-w-3xl text-base leading-relaxed text-slate-400">
+		<SectionHeader
+			numeral="2"
+			title="Repo Governance & Structural Integrity"
+			subheading="Projects don’t fall apart because of one big mistake — they fall apart from slow structural drift."
+			tone="violet"
+		/>
+		<p class="mb-8 max-w-3xl text-base leading-relaxed text-slate-400">
 			Ungoverned AI introduces inconsistencies that compound over time. AGS keeps the project coherent by
 			enforcing structure at every layer.
 		</p>
-
-		<div class="mt-8 grid gap-4 lg:grid-cols-2" data-ags-demo="repo">
-			<ComparePanel
-				variant="before"
-				heading="Repo — Before AGS"
-				items={beforeItems}
-				closing="These structural failures create long-term complexity."
-			/>
-			<ComparePanel
-				variant="after"
-				heading="Repo — With AGS"
-				items={afterItems}
-				closing="This is how AGS prevents structural entropy."
-			/>
-		</div>
+		<ComparisonSection
+			beforeHeading="Repo — Before AGS"
+			afterHeading="Repo — With AGS"
+			{beforeItems}
+			{afterItems}
+			closing="This is how AGS prevents structural entropy."
+		/>
 	</div>
 </section>

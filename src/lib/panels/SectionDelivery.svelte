@@ -1,5 +1,6 @@
 <script lang="ts">
-	import ComparePanel from './ComparePanel.svelte';
+	import SectionHeader from './SectionHeader.svelte';
+	import ComparisonSection from './ComparisonSection.svelte';
 
 	const beforeItems = [
 		{
@@ -46,28 +47,22 @@
 
 <section id="delivery" class="scroll-mt-20 border-t border-white/[0.06] py-12 sm:py-16">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-		<p class="text-sm font-medium text-fuchsia-300/90">3 · Governed Delivery</p>
-		<h2 class="mt-2 max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-			Shipping shouldn’t be a separate gamble — it should follow the same rules as the rest of the system.
-		</h2>
-		<p class="mt-3 max-w-3xl text-base leading-relaxed text-slate-400">
+		<SectionHeader
+			numeral="3"
+			title="Governed Delivery"
+			subheading="Shipping shouldn’t be a separate gamble — it should follow the same rules as the rest of the system."
+			tone="magenta"
+		/>
+		<p class="mb-8 max-w-3xl text-base leading-relaxed text-slate-400">
 			AI-assisted development often produces code quickly, but delivery becomes a fragile, ad-hoc process. AGS
 			governs commits, versions, environments, artifacts, and releases under one unified model.
 		</p>
-
-		<div class="mt-8 grid gap-4 lg:grid-cols-2" data-ags-demo="delivery">
-			<ComparePanel
-				variant="before"
-				heading="Delivery — Before AGS"
-				items={beforeItems}
-				closing="Delivery becomes guesswork."
-			/>
-			<ComparePanel
-				variant="after"
-				heading="Delivery — With AGS"
-				items={afterItems}
-				closing="Delivery becomes predictable."
-			/>
-		</div>
+		<ComparisonSection
+			beforeHeading="Delivery — Before AGS"
+			afterHeading="Delivery — With AGS"
+			{beforeItems}
+			{afterItems}
+			closing="Delivery becomes predictable."
+		/>
 	</div>
 </section>
