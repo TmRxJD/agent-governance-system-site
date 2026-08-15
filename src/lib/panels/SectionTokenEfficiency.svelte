@@ -19,20 +19,14 @@
 		<div
 			class="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(165,243,252,0.55)_1px,transparent_1px),linear-gradient(90deg,rgba(165,243,252,0.55)_1px,transparent_1px)] [background-size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_78%)]"
 		></div>
-		<div
-			class="absolute left-[15%] top-[20%] h-64 w-64 rounded-full bg-cyan-300/30 blur-3xl"
-		></div>
-		<div
-			class="absolute right-[10%] bottom-[15%] h-72 w-72 rounded-full bg-violet-400/25 blur-3xl"
-		></div>
+		<div class="absolute left-[15%] top-[20%] h-64 w-64 rounded-full bg-cyan-300/30 blur-3xl"></div>
+		<div class="absolute right-[10%] bottom-[15%] h-72 w-72 rounded-full bg-violet-400/25 blur-3xl"></div>
 		<div
 			class="absolute left-1/2 top-1/2 h-[22rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/20 blur-3xl"
 		></div>
 	</div>
 
-	<div
-		class="relative mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8"
-	>
+	<div class="relative mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8">
 		<div
 			class="rounded-2xl border border-cyan-300/25 bg-[#06080f]/55 px-6 py-10 shadow-[0_0_80px_rgba(34,211,238,0.18)] backdrop-blur-md sm:px-10 sm:py-12"
 		>
