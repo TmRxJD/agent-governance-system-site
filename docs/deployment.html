@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deployment Engine — AGS</title>
+  <link rel="stylesheet" href="../site/styles.css" />
+</head>
+<body>
+  <main>
+    <p class="brand">Agent Governance System</p>
+    <h1>Deployment Engine</h1>
+    <p>Environment pipelines, deploy-before-merge criteria, evidence bus, and sentinel pain on failures.</p>
+    <h2>Canonical environments</h2>
+    <pre>local → bench → dev-subdomain → staging → production</pre>
+    <p>Repos enable a subset. Tower-style example: <a href="../examples/tower-deployment.yml">tower-deployment.yml</a>.</p>
+    <p>Promotion uses <code>deploy_enforce</code> / <code>Deploy-Target</code> trailer — not every commit.</p>
+    <p><a href="../site/index.html">Home</a></p>
+  </main>
+</body>
+</html>

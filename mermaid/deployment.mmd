@@ -1,0 +1,8 @@
+flowchart LR
+  localEnv[local] --> bench[bench]
+  bench --> dev[dev-subdomain]
+  dev --> staging[staging]
+  staging --> prod[production]
+  prodGate[deploy_enforce to master]
+  bench --> prodGate
+  dev --> prodGate

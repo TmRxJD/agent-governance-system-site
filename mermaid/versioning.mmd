@@ -1,0 +1,10 @@
+flowchart TD
+  scope[Commit-Scope]
+  plan[version_plan_bump]
+  pkg[package.json bump]
+  cl[CHANGELOG.md]
+  gate[gate.version]
+  scope --> plan --> pkg
+  plan --> cl
+  pkg --> gate
+  cl --> gate

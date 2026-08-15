@@ -1,0 +1,15 @@
+schemaVersion: 1
+scheme: semver
+packages:
+  - name: "@example/app"
+    path: packages/app/package.json
+    previousVersion: "1.0.0"
+bumpRules:
+  file-create: minor
+  module-wire: minor
+  single-change: patch
+  single-fix: patch
+  breaking-change: major
+  milestone-close: none
+changelog:
+  path: CHANGELOG.md

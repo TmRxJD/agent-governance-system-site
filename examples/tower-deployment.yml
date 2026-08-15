@@ -1,0 +1,32 @@
+schemaVersion: 1
+environments:
+  - id: local
+    requiredChecks: []
+    requiredTests: [unit]
+    requiredApprovals: 0
+  - id: bench
+    requiredChecks: [build]
+    requiredTests: [unit]
+    requiredApprovals: 0
+  - id: dev-subdomain
+    requiredChecks: [build, health]
+    requiredTests: [unit, e2e]
+    requiredApprovals: 0
+  - id: staging
+    requiredChecks: [build]
+    requiredTests: [unit]
+    requiredApprovals: 1
+  - id: production
+    requiredChecks: [build]
+    requiredTests: [unit]
+    requiredApprovals: 1
+deploymentOrder:
+  - local
+  - bench
+  - dev-subdomain
+  - staging
+  - production
+mergeTarget: master
+requireBeforeMerge:
+  - bench
+  - dev-subdomain
