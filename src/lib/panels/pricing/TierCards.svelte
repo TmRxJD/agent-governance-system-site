@@ -35,18 +35,24 @@
 
 <section id="tiers" class="scroll-mt-20 pb-14 pt-8 sm:pb-16 sm:pt-10">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-		<!-- Force three columns from tablet up; stack only on narrow phones -->
-		<div class="grid grid-cols-1 gap-4 min-[720px]:grid-cols-3 min-[720px]:gap-5">
+		<!--
+			Subgrid locks name / price / note / description / use-case / CTA rows
+			level across all three cards on tablet+.
+		-->
+		<div
+			class="grid grid-cols-1 gap-4 min-[720px]:grid-cols-3 min-[720px]:gap-5 min-[720px]:grid-rows-[auto_auto_auto_auto_auto_minmax(0,1fr)_auto]"
+		>
 			{#each tiers as tier (tier.id)}
 				<article
-					class={`flex min-w-0 flex-col rounded-2xl border p-5 sm:p-6 ${
+					class={`grid min-w-0 grid-rows-[auto_auto_auto_auto_auto_1fr_auto] gap-y-3 rounded-2xl border p-5 sm:p-6 min-[720px]:row-span-7 min-[720px]:grid-rows-subgrid min-[720px]:gap-y-0 ${
 						tier.id === 'personal'
 							? 'border-cyan-400/35 bg-gradient-to-b from-cyan-950/40 to-[#0a1018] shadow-[0_24px_60px_rgba(34,211,238,0.08)]'
 							: 'border-white/10 bg-white/[0.02]'
 					}`}
 				>
 					<h2 class="text-lg font-semibold text-white">{tier.name}</h2>
-					<div class="mt-3 space-y-1">
+
+					<div class="space-y-1 self-start pt-1">
 						{#each tier.priceLines as line, i (line)}
 							<p
 								class={i === 0
@@ -57,15 +63,23 @@
 							</p>
 						{/each}
 					</div>
-					{#if tier.note}
-						<p class="mt-3 text-xs text-cyan-300/90" title={tier.note}>{tier.note}</p>
-					{/if}
-					<p class="mt-4 text-sm leading-snug text-slate-300">{tier.description}</p>
-					<p class="mt-2 text-sm text-slate-500">{tier.useCase}</p>
-					<div class="mt-6 flex-1"></div>
-					<Button href={href(tier.cta.href)} variant={tier.cta.variant} class="w-full"
-						>{tier.cta.label}</Button
-					>
+
+					<div class="min-h-[1.25rem] pt-1">
+						{#if tier.note}
+							<p class="text-xs text-cyan-300/90" title={tier.note}>{tier.note}</p>
+						{/if}
+					</div>
+
+					<p class="pt-2 text-sm leading-snug text-slate-300">{tier.description}</p>
+					<p class="text-sm text-slate-500">{tier.useCase}</p>
+
+					<div class="min-h-4" aria-hidden="true"></div>
+
+					<div class="pt-2">
+						<Button href={href(tier.cta.href)} variant={tier.cta.variant} class="w-full"
+							>{tier.cta.label}</Button
+						>
+					</div>
 				</article>
 			{/each}
 		</div>
