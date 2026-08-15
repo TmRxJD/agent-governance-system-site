@@ -10,7 +10,7 @@
 		},
 		{
 			q: 'How is Enterprise billed?',
-			a: 'Monthly or yearly per seat, or a yearly unlimited-seat option. Contact sales for invoicing.'
+			a: 'Monthly or yearly per seat, or a yearly unlimited-seat option — paid through Stripe checkout.'
 		},
 		{
 			q: 'Can I cancel at any time?',
@@ -22,7 +22,7 @@
 		},
 		{
 			q: 'How do student discounts work?',
-			a: 'Verified students receive 75% off Personal. Apply during checkout or contact sales with proof of enrollment.'
+			a: 'Verified students receive 75% off Personal. Apply the student option during Stripe checkout.'
 		}
 	];
 </script>
