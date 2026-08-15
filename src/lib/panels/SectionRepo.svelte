@@ -5,27 +5,27 @@
 	const beforeItems = [
 		{
 			title: 'Diverging domain models',
-			body: 'The user object in authentication, billing, analytics, and notifications slowly evolves into different shapes. Each module believes it’s using the same model — it isn’t.'
+			body: 'The same “user” shape silently differs across auth, billing, analytics, and notifications.'
 		},
 		{
 			title: 'Feature flags that multiply',
-			body: 'One feature becomes three flags with different names and values. Half the system thinks the feature is on; half thinks it’s off.'
+			body: 'One feature becomes three flags with different names — half the system disagrees on state.'
 		},
 		{
 			title: 'Configuration scattered across files',
-			body: 'Timeouts, regions, modes, and toggles appear in multiple JSON files with no clear authority. Changing one doesn’t update the others.'
+			body: 'Timeouts, regions, and toggles live in multiple files with no clear authority.'
 		},
 		{
 			title: 'Data shapes that drift silently',
-			body: 'Lists and collections diverge: id, userId, uid, Id — all refer to the same concept but break downstream logic unpredictably.'
+			body: 'id, userId, uid, Id all mean the same thing — and break consumers unpredictably.'
 		},
 		{
 			title: 'Domain boundaries erode',
-			body: 'Modules appear in the wrong domain because the agent didn’t understand the project’s structure. Auth logic ends up in utilities; billing logic ends up in helpers.'
+			body: 'Auth lands in utilities; billing lands in helpers. Structure stops matching intent.'
 		},
 		{
 			title: 'Competing abstractions emerge',
-			body: 'The agent introduces new layers (“FlowManager”, “Coordinator”, “Pipeline”) that conflict with existing architecture. Now two systems exist for the same job.'
+			body: 'New layers (“FlowManager”, “Coordinator”) conflict with the architecture already in place.'
 		}
 	];
 
@@ -36,7 +36,7 @@
 		},
 		{
 			title: 'One authoritative configuration source',
-			body: 'Feature flags and settings live in one governed file. Everything else must point to it.'
+			body: 'Flags and settings live in one governed file. Everything else points to it.'
 		},
 		{
 			title: 'Normalized data shapes',
@@ -48,7 +48,7 @@
 		},
 		{
 			title: 'Consistent abstractions',
-			body: 'Agents cannot introduce new layers unless policy allows. Architecture stays unified.'
+			body: 'New layers appear only when policy allows. Architecture stays unified.'
 		},
 		{
 			title: 'Structural enforcement through pointers and policy',
@@ -57,21 +57,19 @@
 	];
 </script>
 
-<section id="repo" class="scroll-mt-20 border-t border-white/[0.06] bg-black/15 py-12 sm:py-16">
+<section id="repo" class="scroll-mt-20 border-y border-white/[0.06] bg-black/25 py-14 sm:py-20">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 		<SectionHeader
 			numeral="2"
 			title="Repo Governance & Structural Integrity"
-			subheading="Projects don’t fall apart because of one big mistake — they fall apart from slow structural drift."
+			subheading="Projects fall apart from slow structural drift — not one big mistake."
 			tone="violet"
 		/>
-		<p class="mb-8 max-w-3xl text-base leading-relaxed text-slate-400">
-			Ungoverned AI introduces inconsistencies that compound over time. AGS keeps the project coherent by
-			enforcing structure at every layer.
-		</p>
 		<ComparisonSection
-			beforeHeading="Repo — Before AGS"
-			afterHeading="Repo — With AGS"
+			beforeHeading="Before AGS"
+			afterHeading="With AGS"
+			beforeImage="/media/repo-chaos.jpg"
+			afterImage="/media/repo-order.jpg"
 			{beforeItems}
 			{afterItems}
 			closing="This is how AGS prevents structural entropy."

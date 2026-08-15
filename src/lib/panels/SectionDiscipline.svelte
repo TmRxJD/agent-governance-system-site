@@ -5,27 +5,27 @@
 	const beforeItems = [
 		{
 			title: 'Inconsistent reasoning across tasks',
-			body: 'The agent solves the same problem differently depending on the prompt, the day, or the surrounding conversation. Patterns don’t persist.'
+			body: 'The same problem is solved differently depending on the prompt, the day, or the conversation. Patterns don’t persist.'
 		},
 		{
 			title: 'Symptom-level fixes instead of real corrections',
-			body: 'It patches issues in multiple files instead of repairing the underlying abstraction. The bug disappears temporarily, then resurfaces somewhere else.'
+			body: 'Issues are patched across files instead of repairing the underlying abstraction — then resurface elsewhere.'
 		},
 		{
 			title: 'Parallel implementations of the same concept',
-			body: 'It re-implements logic that already exists because it didn’t recall the earlier decision or didn’t see the file. Now the project has competing versions of the same idea.'
+			body: 'Existing logic is re-implemented because earlier decisions weren’t recalled. Competing versions appear.'
 		},
 		{
 			title: 'Partial refactors that leave invariants broken',
-			body: 'It updates some call sites for a renamed function and forgets the rest. The code compiles, but the behavior is fractured.'
+			body: 'Some call sites update; others don’t. The code may compile while behavior stays fractured.'
 		},
 		{
 			title: 'Silent contract drift',
-			body: 'It changes a return type or field name because it “seemed clearer,” breaking downstream consumers that were never updated.'
+			body: 'A return type or field name changes because it “seemed clearer,” breaking downstream consumers.'
 		},
 		{
 			title: 'Invented structure when context is missing',
-			body: 'When the agent doesn’t have the right files, it guesses. Those guesses become new modules, shapes, and flows that don’t match the project’s architecture.'
+			body: 'Without the right files, the agent guesses — and those guesses become mismatched modules and flows.'
 		}
 	];
 
@@ -36,28 +36,28 @@
 		},
 		{
 			title: 'Root-level corrections',
-			body: 'Semantic graphs show where a concept lives and how it’s used. Fixes happen at the right abstraction, not scattered across call sites.'
+			body: 'Semantic graphs show where a concept lives. Fixes happen at the right abstraction.'
 		},
 		{
 			title: 'Reuse of established patterns',
-			body: 'Builders, helpers, and abstractions created earlier become part of the agent’s working vocabulary. No more parallel implementations.'
+			body: 'Builders and helpers created earlier become part of the agent’s working vocabulary.'
 		},
 		{
 			title: 'Complete refactors',
-			body: 'When a concept changes, AGS ensures all dependent locations update together. No half-migrated logic.'
+			body: 'When a concept changes, dependent locations update together — no half-migrated logic.'
 		},
 		{
 			title: 'Contract consistency across modules',
-			body: 'Schemas and canonical sources prevent silent type drift. If a field changes, the entire project aligns.'
+			body: 'Schemas and canonical sources prevent silent type drift across the project.'
 		},
 		{
 			title: 'Automatic context retrieval',
-			body: 'Agents pull the files they need instead of guessing or inventing structure. Decisions are made with full visibility.'
+			body: 'Agents pull the files they need instead of guessing or inventing structure.'
 		}
 	];
 </script>
 
-<section id="discipline" class="scroll-mt-20 border-t border-white/[0.06] py-12 sm:py-16">
+<section id="discipline" class="scroll-mt-20 py-14 sm:py-20">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 		<SectionHeader
 			numeral="1"
@@ -65,13 +65,11 @@
 			subheading="AI coding breaks down in ways that aren’t obvious — until they cost you hours."
 			tone="cyan"
 		/>
-		<p class="mb-8 max-w-3xl text-base leading-relaxed text-slate-400">
-			Ungoverned agents don’t fail loudly. They fail in subtle, compounding ways that look correct in isolation
-			but fracture the project over time.
-		</p>
 		<ComparisonSection
-			beforeHeading="AI coding without AGS"
-			afterHeading="AI coding with AGS"
+			beforeHeading="Without AGS"
+			afterHeading="With AGS"
+			beforeImage="/media/chaos.jpg"
+			afterImage="/media/order.jpg"
 			{beforeItems}
 			{afterItems}
 			closing="AGS forces agents to behave like part of the engineering system, not a free-floating text generator."

@@ -5,6 +5,7 @@
 	import SectionDelivery from '$lib/panels/SectionDelivery.svelte';
 	import SectionAdditionalEngines from '$lib/panels/SectionAdditionalEngines.svelte';
 	import { href } from '$lib/paths';
+	import { base } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -12,14 +13,24 @@
 </svelte:head>
 
 <div>
-	<!-- Hero -->
-	<section class="px-4 pb-14 pt-20 sm:px-6 sm:pb-20 sm:pt-28 lg:px-8">
-		<div class="mx-auto max-w-3xl text-center">
+	<!-- Hero with stock visual -->
+	<section class="relative overflow-hidden border-b border-white/[0.06]">
+		<div class="absolute inset-0">
+			<img
+				src={`${base}/media/hero.jpg`}
+				alt=""
+				class="h-full w-full object-cover opacity-35"
+			/>
+			<div
+				class="absolute inset-0 bg-gradient-to-b from-[#06080f]/70 via-[#06080f]/85 to-[#06080f]"
+			></div>
+		</div>
+		<div class="relative mx-auto max-w-3xl px-4 pb-20 pt-24 text-center sm:px-6 sm:pb-28 sm:pt-32 lg:px-8">
 			<p class="text-sm font-medium tracking-wide text-cyan-300/90">Agent Governance System</p>
 			<h1 class="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl sm:leading-[1.08]">
 				Turn chaotic AI-assisted development into governed engineering.
 			</h1>
-			<p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-400">
+			<p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
 				AGS keeps agents disciplined, repos coherent, and delivery predictable — as one system.
 			</p>
 			<div class="mt-10 flex flex-wrap justify-center gap-3">
@@ -34,9 +45,12 @@
 	<SectionDelivery />
 	<SectionAdditionalEngines />
 
-	<!-- Get AGS callout — centered -->
-	<section class="border-t border-white/[0.06] px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
-		<div class="mx-auto max-w-xl text-center">
+	<section class="relative overflow-hidden border-t border-white/[0.06]">
+		<div class="absolute inset-0">
+			<img src={`${base}/media/ship.jpg`} alt="" class="h-full w-full object-cover opacity-20" />
+			<div class="absolute inset-0 bg-[#06080f]/85"></div>
+		</div>
+		<div class="relative mx-auto max-w-xl px-4 py-24 text-center sm:px-6 sm:py-28 lg:px-8">
 			<h2 class="text-3xl font-semibold tracking-tight text-white">Get AGS</h2>
 			<p class="mt-3 text-lg font-medium text-slate-200">Start coding with governed agents.</p>
 			<p class="mt-3 text-base leading-relaxed text-slate-400">
