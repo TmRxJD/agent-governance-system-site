@@ -38,9 +38,10 @@
 			class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 rounded-2xl border border-cyan-400/25 bg-gradient-to-br from-cyan-500/10 via-violet-500/5 to-transparent px-6 py-8 sm:flex-row sm:items-center sm:px-8"
 		>
 			<div>
-				<h2 class="text-2xl font-semibold tracking-tight text-white">Get AGS Today</h2>
+				<h2 class="text-2xl font-semibold tracking-tight text-white">Get AGS</h2>
+				<p class="mt-2 text-lg font-medium text-slate-200">Start coding with governed agents.</p>
 				<p class="mt-2 max-w-md text-slate-400">
-					Commercial license or Tower Community. Private package on GitHub Packages.
+					Install AGS, load your project rules, and keep AI work consistent as you scale.
 				</p>
 			</div>
 			<div class="flex flex-wrap gap-3">

@@ -8,7 +8,8 @@ test.describe('AGS capability pillars', () => {
 		).toBeVisible();
 		await expect(page.locator('#discipline')).toBeVisible();
 		await expect(page.getByText(/don’t fail loudly/i).first()).toBeVisible();
-		await expect(page.getByText('Get AGS Today')).toBeVisible();
+		await expect(page.getByText('Get AGS').first()).toBeVisible();
+		await expect(page.getByText(/Start coding with governed agents/i)).toBeVisible();
 		await expect(page.locator('#engines')).toBeVisible();
 	});
 });
