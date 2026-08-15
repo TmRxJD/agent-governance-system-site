@@ -35,7 +35,7 @@
 			</p>
 			<div class="mt-10 flex flex-wrap justify-center gap-3">
 				<Button href="#discipline" variant="neon">See how AGS governs AI coding</Button>
-				<Button href={href('/get/')} variant="ghost">Get AGS</Button>
+				<Button href={href('/pricing/')} variant="ghost">Pricing</Button>
 			</div>
 		</div>
 	</section>
@@ -56,8 +56,9 @@
 			<p class="mt-3 text-base leading-relaxed text-slate-400">
 				Install AGS, load your project rules, and keep AI work consistent as you scale.
 			</p>
-			<div class="mt-8 flex justify-center">
-				<Button href={href('/get/')} variant="neon">Get AGS</Button>
+			<div class="mt-8 flex flex-wrap justify-center gap-3">
+				<Button href={href('/pricing/')} variant="neon">View pricing</Button>
+				<Button href={href('/get/')} variant="ghost">Get AGS</Button>
 			</div>
 		</div>
 	</section>

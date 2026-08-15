@@ -6,8 +6,11 @@
 	import '../lib/styles/app.css';
 
 	let { children } = $props();
-	const isHome = $derived(
-		page.url.pathname === '/' || page.url.pathname.endsWith('/agent-governance-system-site/')
+
+	const isWide = $derived(
+		page.url.pathname === '/' ||
+			page.url.pathname.endsWith('/agent-governance-system-site/') ||
+			page.url.pathname.includes('/pricing')
 	);
 </script>
 
@@ -21,14 +24,14 @@
 
 <div class="flex min-h-screen flex-col">
 	<Nav />
-	<main class={`mx-auto w-full flex-1 ${isHome ? 'max-w-none' : 'max-w-6xl px-4 py-8'}`}>
+	<main class={`mx-auto w-full flex-1 ${isWide ? 'max-w-none' : 'max-w-6xl px-4 py-8'}`}>
 		{#key page.url.pathname}
 			<div in:fade={{ duration: 160 }}>
 				{@render children()}
 			</div>
 		{/key}
 	</main>
-	{#if !isHome}
+	{#if !isWide}
 		<footer class="border-t border-white/10 py-8 text-center text-sm text-slate-600">
 			AGS · public showcase · dual license
 		</footer>

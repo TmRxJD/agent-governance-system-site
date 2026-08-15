@@ -4,12 +4,14 @@
 
 	const links = [
 		{ href: '/#discipline', label: 'Product', hash: true },
+		{ href: '/pricing/', label: 'Pricing', hash: false },
 		{ href: '/docs/', label: 'Docs', hash: false },
 		{ href: '/get/', label: 'Get AGS', hash: false }
 	];
 
 	function active(path: string, hash: boolean) {
-		if (hash) return page.url.pathname === '/' || page.url.pathname.endsWith('agent-governance-system-site/');
+		if (hash)
+			return page.url.pathname === '/' || page.url.pathname.endsWith('agent-governance-system-site/');
 		return page.url.pathname.includes(path.replace(/\/$/, ''));
 	}
 </script>
