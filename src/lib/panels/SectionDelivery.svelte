@@ -5,47 +5,47 @@
 	const beforeItems = [
 		{
 			title: 'Commit history with no intent',
-			body: '“quick fix”, “temp change”, “final-final-auth” — history you can’t read or safely revert.'
+			body: '“quick fix” / “final-final” — unreadable, unsafe to revert.'
 		},
 		{
-			title: 'Version numbers that don’t reflect reality',
-			body: 'Breaking changes slip into patches; hotfixes override semantic meaning.'
+			title: 'Version numbers that lie',
+			body: 'Breaking changes slip into patches.'
 		},
 		{
-			title: 'Direct-to-production deployments',
-			body: 'Laptop → prod with no gates, no health checks, and no rollback plan.'
+			title: 'Direct-to-production',
+			body: 'Laptop → prod. No gates. No rollback plan.'
 		},
 		{
-			title: 'Artifacts with unclear provenance',
-			body: '“build.zip” / “final-prod.zip” land in the registry with no integrity guarantees.'
+			title: 'Unclear artifact provenance',
+			body: '“final-prod.zip” with no integrity guarantees.'
 		}
 	];
 
 	const afterItems = [
 		{
 			title: 'Scoped, reversible commits',
-			body: 'Every change has clear scope and intent. History stays readable and navigable.'
+			body: 'Clear intent. Readable history.'
 		},
 		{
 			title: 'Predictable versioning',
-			body: 'Patch, minor, and major follow strict rules. Numbers match the change.'
+			body: 'Patch / minor / major match the change.'
 		},
 		{
 			title: 'Governed environment pipeline',
-			body: 'dev → bench → staging → prod, with health and policy checks before promotion.'
+			body: 'dev → bench → staging → prod, with checks.'
 		},
 		{
-			title: 'Rollback paths defined per version',
-			body: 'When staging fails, the system knows exactly how to revert safely.'
+			title: 'Defined rollback paths',
+			body: 'When staging fails, revert is known.'
 		},
 		{
-			title: 'Artifact and registry integrity',
-			body: 'Artifacts are validated, signed, and tracked. Nothing ambiguous enters production.'
+			title: 'Artifact & registry integrity',
+			body: 'Validated, signed, tracked — before production.'
 		}
 	];
 </script>
 
-<section id="delivery" class="scroll-mt-20 py-14 sm:py-20">
+<section id="delivery" class="scroll-mt-20 py-16 sm:py-24">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 		<SectionHeader
 			numeral="3"

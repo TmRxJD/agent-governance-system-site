@@ -5,59 +5,59 @@
 	const beforeItems = [
 		{
 			title: 'Diverging domain models',
-			body: 'The same “user” shape silently differs across auth, billing, analytics, and notifications.'
+			body: '“User” means four different shapes across modules.'
 		},
 		{
 			title: 'Feature flags that multiply',
-			body: 'One feature becomes three flags with different names — half the system disagrees on state.'
+			body: 'One feature becomes three names. State disagrees.'
 		},
 		{
-			title: 'Configuration scattered across files',
-			body: 'Timeouts, regions, and toggles live in multiple files with no clear authority.'
+			title: 'Scattered configuration',
+			body: 'Timeouts and toggles live everywhere — no authority.'
 		},
 		{
-			title: 'Data shapes that drift silently',
-			body: 'id, userId, uid, Id all mean the same thing — and break consumers unpredictably.'
+			title: 'Data shape drift',
+			body: 'id / userId / uid / Id — same idea, broken consumers.'
 		},
 		{
-			title: 'Domain boundaries erode',
-			body: 'Auth lands in utilities; billing lands in helpers. Structure stops matching intent.'
+			title: 'Eroding domain boundaries',
+			body: 'Auth in utilities. Billing in helpers.'
 		},
 		{
-			title: 'Competing abstractions emerge',
-			body: 'New layers (“FlowManager”, “Coordinator”) conflict with the architecture already in place.'
+			title: 'Competing abstractions',
+			body: 'New “managers” conflict with the architecture already there.'
 		}
 	];
 
 	const afterItems = [
 		{
-			title: 'One canonical model per domain',
-			body: 'All modules reference the same schema. No drift. No variants.'
+			title: 'One canonical model',
+			body: 'One schema per domain. No variants.'
 		},
 		{
-			title: 'One authoritative configuration source',
-			body: 'Flags and settings live in one governed file. Everything else points to it.'
+			title: 'One config authority',
+			body: 'Flags and settings live in one governed source.'
 		},
 		{
 			title: 'Normalized data shapes',
-			body: 'Arrays and collections follow one structure, one meaning, one order.'
+			body: 'One structure, one meaning, one order.'
 		},
 		{
-			title: 'Domain-aligned file placement',
-			body: 'Files live in the correct domain. No bleed. No accidental modules.'
+			title: 'Domain-aligned placement',
+			body: 'Files live where the domain says they should.'
 		},
 		{
 			title: 'Consistent abstractions',
-			body: 'New layers appear only when policy allows. Architecture stays unified.'
+			body: 'New layers appear only when policy allows.'
 		},
 		{
-			title: 'Structural enforcement through pointers and policy',
-			body: 'The repo has a backbone. Agents cannot violate it.'
+			title: 'Structural enforcement',
+			body: 'Pointers and policy give the repo a backbone.'
 		}
 	];
 </script>
 
-<section id="repo" class="scroll-mt-20 border-y border-white/[0.06] bg-black/25 py-14 sm:py-20">
+<section id="repo" class="scroll-mt-20 border-y border-white/[0.06] bg-black/30 py-16 sm:py-24">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 		<SectionHeader
 			numeral="2"
