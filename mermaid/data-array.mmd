@@ -1,0 +1,9 @@
+flowchart LR
+  config[".ags/data-arrays.yml"]
+  extract[Extract array]
+  check[Order unique shape]
+  plan[array_plan_normalize]
+  gate[gate.array]
+  config --> extract --> check
+  check --> plan
+  check --> gate

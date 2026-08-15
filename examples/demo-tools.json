@@ -1,0 +1,3 @@
+{
+  "tools": ["array_get", "canon_get", "deploy_get", "version_get"]
+}

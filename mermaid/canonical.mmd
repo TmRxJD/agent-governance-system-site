@@ -1,0 +1,11 @@
+flowchart TD
+  concept[Concept]
+  sot[canonicalPath]
+  mirrors[mirrors]
+  drift[canon_drift]
+  gate[gate.canonical]
+  concept --> sot
+  concept --> mirrors
+  sot --> drift
+  mirrors --> drift
+  drift --> gate

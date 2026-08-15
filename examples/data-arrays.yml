@@ -1,0 +1,10 @@
+schemaVersion: 1
+arrays:
+  - id: demo-tools
+    path: examples/demo-tools.json
+    locator:
+      jsonPath: tools
+    order: alpha
+    uniqueBy: "$value"
+    itemKind: string
+graphArtifact: docs/data-array-map/latest.json

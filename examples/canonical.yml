@@ -1,0 +1,15 @@
+schemaVersion: 1
+concepts:
+  - id: versioning-config
+    label: Versioning policy
+    canonicalPath: .ags/versioning.yml
+    kind: config
+    mirrors:
+      - docs/versioning.html
+  - id: deployment-config
+    label: Deployment policy
+    canonicalPath: .ags/deployment.yml
+    kind: config
+    mirrors:
+      - docs/deployment.html
+graphArtifact: docs/canonical-map/latest.json
