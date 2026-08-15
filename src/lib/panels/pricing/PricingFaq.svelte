@@ -23,6 +23,10 @@
 		{
 			q: 'How do student discounts work?',
 			a: 'Verified students receive 75% off Personal. Apply the student option during Stripe checkout.'
+		},
+		{
+			q: 'How does AGS reduce token cost?',
+			a: 'By stopping repeated prompts, drift, and reasoning loops. As AGS learns your project, token usage drops.'
 		}
 	];
 </script>

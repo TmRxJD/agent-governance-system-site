@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/ui/Button.svelte';
 	import SectionDiscipline from '$lib/panels/SectionDiscipline.svelte';
+	import SectionTokenEfficiency from '$lib/panels/SectionTokenEfficiency.svelte';
 	import SectionRepo from '$lib/panels/SectionRepo.svelte';
 	import SectionDelivery from '$lib/panels/SectionDelivery.svelte';
 	import SectionAdditionalEngines from '$lib/panels/SectionAdditionalEngines.svelte';
@@ -9,7 +10,11 @@
 </script>
 
 <svelte:head>
-	<title>AGS — Governed AI-assisted engineering</title>
+	<title>AGS — More agent output per dollar</title>
+	<meta
+		name="description"
+		content="AGS cuts token waste, stops agent drift, and turns AI-assisted development into governed engineering."
+	/>
 </svelte:head>
 
 <div>
@@ -28,19 +33,21 @@
 		<div class="relative mx-auto max-w-3xl px-4 pb-20 pt-24 text-center sm:px-6 sm:pb-28 sm:pt-32 lg:px-8">
 			<p class="text-sm font-medium tracking-wide text-cyan-300/90">Agent Governance System</p>
 			<h1 class="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl sm:leading-[1.08]">
-				Turn chaotic AI-assisted development into governed engineering.
+				Cut agent token waste. Get more output per dollar.
 			</h1>
 			<p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
-				AGS keeps agents disciplined, repos coherent, and delivery predictable — as one system.
+				AGS reduces repeated prompts and runaway reasoning — then keeps agents disciplined, repos
+				coherent, and delivery predictable.
 			</p>
 			<div class="mt-10 flex flex-wrap justify-center gap-3">
-				<Button href="#discipline" variant="neon">See how AGS governs AI coding</Button>
+				<Button href="#token-efficiency" variant="neon">See token efficiency</Button>
 				<Button href={href('/pricing/')} variant="ghost">Pricing</Button>
 			</div>
 		</div>
 	</section>
 
 	<SectionDiscipline />
+	<SectionTokenEfficiency />
 	<SectionRepo />
 	<SectionDelivery />
 	<SectionAdditionalEngines />

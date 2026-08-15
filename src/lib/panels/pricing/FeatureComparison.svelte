@@ -7,6 +7,16 @@
 
 	const groups: Group[] = [
 		{
+			name: 'Token Efficiency',
+			rows: [
+				{ label: 'Token-aware agent discipline', free: true, personal: true, enterprise: true },
+				{ label: 'Organic guardrail learning', free: false, personal: true, enterprise: true },
+				{ label: 'Reasoning loop prevention', free: false, personal: true, enterprise: true },
+				{ label: 'Multi-file context compression', free: false, personal: true, enterprise: true },
+				{ label: 'Delivery pipeline token reduction', free: false, personal: false, enterprise: true }
+			]
+		},
+		{
 			name: 'Agent Governance',
 			rows: [
 				{ label: 'Basic agent discipline', free: true, personal: true, enterprise: true },

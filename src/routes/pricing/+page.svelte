@@ -1,6 +1,7 @@
 <script lang="ts">
 	import PricingHero from '$lib/panels/pricing/PricingHero.svelte';
 	import TierCards from '$lib/panels/pricing/TierCards.svelte';
+	import TokenEfficiency from '$lib/panels/pricing/TokenEfficiency.svelte';
 	import FeatureComparison from '$lib/panels/pricing/FeatureComparison.svelte';
 	import WhoItsFor from '$lib/panels/pricing/WhoItsFor.svelte';
 	import PricingFaq from '$lib/panels/pricing/PricingFaq.svelte';
@@ -11,13 +12,14 @@
 	<title>AGS Licensing & Pricing</title>
 	<meta
 		name="description"
-		content="AGS pricing: Free, Personal, and Enterprise tiers for agent, repo, and delivery governance."
+		content="AGS pricing: reduce token waste, cut agent cost, and govern Free, Personal, and Enterprise tiers."
 	/>
 </svelte:head>
 
 <div>
 	<PricingHero />
 	<TierCards />
+	<TokenEfficiency />
 	<FeatureComparison />
 	<WhoItsFor />
 	<PricingFaq />
