@@ -16,18 +16,16 @@
 		muted: 'text-slate-500'
 	};
 
-	const label = $derived(eyebrow ?? (numeral ? `${numeral} · ${title}` : title));
+	const label = $derived(eyebrow ?? (numeral ? `${numeral}` : null));
 </script>
 
 <header class="mb-10 max-w-2xl">
-	<p class={`text-sm font-medium ${tones[tone]}`}>{label}</p>
-	{#if numeral && subheading}
-		<h2 class="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">{subheading}</h2>
-	{:else}
-		<h2 class="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">{title}</h2>
-		{#if subheading}
-			<p class="mt-2 text-base text-slate-400">{subheading}</p>
-		{/if}
+	{#if label}
+		<p class={`text-sm font-medium tracking-[0.18em] uppercase ${tones[tone]}`}>{label}</p>
 	{/if}
-	<div class="mt-6 h-px w-12 bg-gradient-to-r from-white/30 to-transparent"></div>
+	<h2 class="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">{title}</h2>
+	{#if subheading}
+		<p class="mt-3 text-base leading-snug text-slate-400">{subheading}</p>
+	{/if}
+	<div class="mt-6 h-px w-16 bg-gradient-to-r from-cyan-400/50 via-violet-400/40 to-transparent"></div>
 </header>

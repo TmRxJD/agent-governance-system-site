@@ -7,7 +7,9 @@ test.describe('AGS capability pillars', () => {
 			page.getByRole('heading', { name: /Turn chaotic AI-assisted development/i })
 		).toBeVisible();
 		await expect(page.locator('#discipline')).toBeVisible();
-		await expect(page.getByText(/don’t fail loudly/i).first()).toBeVisible();
+		await expect(page.getByText(/Agent Discipline & Drift Prevention/i).first()).toBeVisible();
+		await expect(page.getByText(/Ungoverned/i).first()).toBeVisible();
+		await expect(page.getByText(/Governed/i).first()).toBeVisible();
 		await expect(page.getByText('Get AGS').first()).toBeVisible();
 		await expect(page.getByText(/Start coding with governed agents/i)).toBeVisible();
 		await expect(page.locator('#engines')).toBeVisible();
