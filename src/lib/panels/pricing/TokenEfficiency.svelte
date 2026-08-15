@@ -1,16 +1,16 @@
 <script lang="ts">
 	const points = [
 		{
-			title: 'Fewer wasted prompts',
-			body: 'Agents stop retrying the same fix or bouncing between guardrails.'
+			title: 'Fewer dead-end retries',
+			body: 'The agent stops looping on the same broken fix and moves on with context that sticks.'
 		},
 		{
-			title: 'Organic guardrails',
-			body: 'AGS learns your project and prevents token-heavy reasoning loops.'
+			title: 'Rules that fit your repo',
+			body: 'AGS learns how your project is structured so the agent asks less and guesses less.'
 		},
 		{
-			title: 'Scales down cost',
-			body: 'As AGS learns, token usage drops, making agents cheaper over time.'
+			title: 'Cheaper over time',
+			body: 'As those rules settle in, each session uses fewer tokens for the same kind of work.'
 		}
 	];
 </script>
@@ -20,13 +20,13 @@
 	class="scroll-mt-16 border-y border-white/[0.06] bg-gradient-to-b from-cyan-950/20 to-transparent py-12 sm:py-14"
 >
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-		<p class="text-xs font-semibold tracking-[0.18em] text-cyan-300/90 uppercase">Why AGS</p>
+		<p class="text-sm font-medium tracking-wide text-cyan-300/90">AI cost control</p>
 		<h2 class="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-			Token Efficiency & Cost Reduction
+			Built to waste fewer tokens
 		</h2>
 		<p class="mt-3 max-w-2xl text-sm leading-snug text-slate-400 sm:text-base">
-			AGS reduces token usage by preventing repeated prompts, eliminating agent drift, and enforcing
-			organically learned guardrails that keep agents from wasting reasoning cycles.
+			Most of your AI spend isn’t “smart work” — it’s retries, confusion, and re-explaining the same
+			project. AGS cuts that noise so more of your budget becomes finished code.
 		</p>
 
 		<div class="mt-8 grid gap-4 sm:grid-cols-3">
@@ -39,7 +39,7 @@
 		</div>
 
 		<p class="mt-8 text-center text-base font-medium text-cyan-200/95 sm:text-lg">
-			AGS pays for itself by reducing token consumption as your project grows.
+			Many teams find AGS costs less than the tokens it saves.
 		</p>
 	</div>
 </section>

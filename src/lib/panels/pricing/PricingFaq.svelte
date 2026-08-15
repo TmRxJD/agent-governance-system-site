@@ -26,7 +26,7 @@
 		},
 		{
 			q: 'How does AGS reduce token cost?',
-			a: 'By stopping repeated prompts, drift, and reasoning loops. As AGS learns your project, token usage drops.'
+			a: 'It cuts the expensive part of AI coding: retries, confusion, and re-explaining your project. Sessions stay shorter and more useful.'
 		}
 	];
 </script>

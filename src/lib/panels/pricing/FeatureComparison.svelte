@@ -7,42 +7,58 @@
 
 	const groups: Group[] = [
 		{
-			name: 'Token Efficiency',
+			name: 'Results you can see',
 			rows: [
-				{ label: 'Token-aware agent discipline', free: true, personal: true, enterprise: true },
-				{ label: 'Organic guardrail learning', free: false, personal: true, enterprise: true },
-				{ label: 'Reasoning loop prevention', free: false, personal: true, enterprise: true },
-				{ label: 'Multi-file context compression', free: false, personal: true, enterprise: true },
-				{ label: 'Delivery pipeline token reduction', free: false, personal: false, enterprise: true }
+				{ label: 'Clear score for whether work got better', free: true, personal: true, enterprise: true },
+				{ label: 'Checks that the project is actually improving', free: false, personal: true, enterprise: true },
+				{ label: 'Treats “stable” as success, not stuck', free: false, personal: true, enterprise: true },
+				{ label: 'Stress-tests against bad agent behavior', free: false, personal: true, enterprise: true },
+				{ label: 'Flags no progress and regressions', free: false, personal: true, enterprise: true },
+				{ label: 'Side-by-side with vs without AGS', free: false, personal: true, enterprise: true },
+				{ label: 'Uses results to cut waste next time', free: false, personal: true, enterprise: true },
+				{ label: 'Coordinates impact across the full system', free: false, personal: false, enterprise: true }
 			]
 		},
 		{
-			name: 'Agent Governance',
+			name: 'Cost & usage',
 			rows: [
-				{ label: 'Basic agent discipline', free: true, personal: true, enterprise: true },
-				{ label: 'Semantic graph intelligence', free: false, personal: true, enterprise: true },
-				{ label: 'Builder evolution & pattern learning', free: false, personal: true, enterprise: true },
-				{ label: 'Multi-file refactors', free: false, personal: true, enterprise: true }
+				{ label: 'Avoids wasted retries', free: true, personal: true, enterprise: true },
+				{ label: 'Learns your project rules', free: false, personal: true, enterprise: true },
+				{ label: 'Stops circular prompts', free: false, personal: true, enterprise: true },
+				{ label: 'Smarter multi-file context', free: false, personal: true, enterprise: true },
+				{ label: 'Leaner delivery workflows', free: false, personal: false, enterprise: true },
+				{ label: 'Usage analytics', free: false, personal: false, enterprise: true },
+				{ label: 'Cost forecasting', free: false, personal: false, enterprise: true },
+				{ label: 'Multi-agent usage control', free: false, personal: false, enterprise: true }
 			]
 		},
 		{
-			name: 'Repo Governance',
+			name: 'Agent behavior',
 			rows: [
-				{ label: 'Schemas, pointers, canonical sources', free: true, personal: true, enterprise: true },
-				{ label: 'Cross-module contract alignment', free: false, personal: true, enterprise: true },
-				{ label: 'Deep context retrieval', free: false, personal: true, enterprise: true }
+				{ label: 'Keeps agents consistent', free: true, personal: true, enterprise: true },
+				{ label: 'Understands how concepts connect', free: false, personal: true, enterprise: true },
+				{ label: 'Reuses patterns it already learned', free: false, personal: true, enterprise: true },
+				{ label: 'Safe multi-file changes', free: false, personal: true, enterprise: true }
 			]
 		},
 		{
-			name: 'Delivery Governance',
+			name: 'Codebase structure',
 			rows: [
-				{ label: 'Scoped commit governance', free: true, personal: true, enterprise: true },
-				{ label: 'Versioning engine', free: false, personal: false, enterprise: true },
-				{ label: 'Release & promotion engines', free: false, personal: false, enterprise: true },
-				{ label: 'Deployment governance', free: false, personal: false, enterprise: true },
-				{ label: 'Artifact & registry integrity', free: false, personal: false, enterprise: true },
-				{ label: 'Rollback orchestration', free: false, personal: false, enterprise: true },
-				{ label: 'Security & access governance', free: false, personal: false, enterprise: true }
+				{ label: 'One source of truth for shapes & rules', free: true, personal: true, enterprise: true },
+				{ label: 'Keeps modules in agreement', free: false, personal: true, enterprise: true },
+				{ label: 'Pulls the right context automatically', free: false, personal: true, enterprise: true }
+			]
+		},
+		{
+			name: 'Shipping & releases',
+			rows: [
+				{ label: 'Clear, scoped commits', free: true, personal: true, enterprise: true },
+				{ label: 'Predictable version numbers', free: false, personal: false, enterprise: true },
+				{ label: 'Controlled releases & promotions', free: false, personal: false, enterprise: true },
+				{ label: 'Safer deployments', free: false, personal: false, enterprise: true },
+				{ label: 'Trusted build artifacts', free: false, personal: false, enterprise: true },
+				{ label: 'Known rollback paths', free: false, personal: false, enterprise: true },
+				{ label: 'Access & security controls', free: false, personal: false, enterprise: true }
 			]
 		}
 	];

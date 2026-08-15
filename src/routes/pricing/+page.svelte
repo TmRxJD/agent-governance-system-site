@@ -12,7 +12,7 @@
 	<title>AGS Licensing & Pricing</title>
 	<meta
 		name="description"
-		content="AGS pricing: reduce token waste, cut agent cost, and govern Free, Personal, and Enterprise tiers."
+		content="AGS pricing for Free, Personal, and Enterprise — keep coding agents useful without wasting your AI budget."
 	/>
 </svelte:head>
 

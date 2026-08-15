@@ -10,10 +10,10 @@
 </script>
 
 <svelte:head>
-	<title>AGS — More agent output per dollar</title>
+	<title>AGS — Keep AI coding on track</title>
 	<meta
 		name="description"
-		content="AGS cuts token waste, stops agent drift, and turns AI-assisted development into governed engineering."
+		content="AGS helps coding agents stay consistent, waste fewer tokens, and keep your codebase coherent."
 	/>
 </svelte:head>
 
@@ -33,14 +33,14 @@
 		<div class="relative mx-auto max-w-3xl px-4 pb-20 pt-24 text-center sm:px-6 sm:pb-28 sm:pt-32 lg:px-8">
 			<p class="text-sm font-medium tracking-wide text-cyan-300/90">Agent Governance System</p>
 			<h1 class="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl sm:leading-[1.08]">
-				Cut agent token waste. Get more output per dollar.
+				Keep AI coding on track — without burning your budget
 			</h1>
 			<p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
-				AGS reduces repeated prompts and runaway reasoning — then keeps agents disciplined, repos
-				coherent, and delivery predictable.
+				AGS helps agents follow your project’s real rules, redo less work, and stay consistent from
+				edit to ship.
 			</p>
 			<div class="mt-10 flex flex-wrap justify-center gap-3">
-				<Button href="#token-efficiency" variant="neon">See token efficiency</Button>
+				<Button href="#token-efficiency" variant="neon">See how it saves</Button>
 				<Button href={href('/pricing/')} variant="ghost">Pricing</Button>
 			</div>
 		</div>
