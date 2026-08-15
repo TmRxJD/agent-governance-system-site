@@ -27,10 +27,10 @@
 	];
 </script>
 
-<section id="faq" class="scroll-mt-20 border-t border-white/[0.06] bg-black/25 py-16 sm:py-20">
+<section id="faq" class="scroll-mt-16 border-t border-white/[0.06] bg-black/25 py-12 sm:py-14">
 	<div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-		<h2 class="text-2xl font-semibold tracking-tight text-white">FAQ</h2>
-		<dl class="mt-10 space-y-6">
+		<h2 class="text-xl font-semibold tracking-tight text-white">FAQ</h2>
+		<dl class="mt-6 space-y-5">
 			{#each faqs as item (item.q)}
 				<div class="border-b border-white/[0.06] pb-6">
 					<dt class="text-sm font-semibold text-white">{item.q}</dt>
@@ -40,3 +40,4 @@
 		</dl>
 	</div>
 </section>
+

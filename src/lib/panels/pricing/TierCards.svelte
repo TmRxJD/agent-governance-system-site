@@ -1,84 +1,82 @@
 <script lang="ts">
 	import Button from '$lib/ui/Button.svelte';
 	import { href } from '$lib/paths';
+	import { base } from '$app/paths';
 
 	const tiers = [
 		{
 			id: 'free',
 			name: 'Free',
-			priceLines: ['$0'],
+			image: '/media/pricing-free.jpg',
+			pricePrimary: '$0',
+			priceSecondary: null as string | null,
 			description: 'Core governance for agents and repos.',
-			useCase: 'For exploration and small personal projects.',
-			note: null as string | null,
+			useCase: 'Exploration and small personal projects.',
 			cta: { label: 'Get Free', href: '/get/', variant: 'ghost' as const }
 		},
 		{
 			id: 'personal',
 			name: 'Personal',
-			priceLines: ['$12/month', 'or $120/year'],
+			image: '/media/pricing-personal.jpg',
+			pricePrimary: '$12/mo',
+			priceSecondary: '$120/year - Students 75% off',
 			description: 'Full agent and repo intelligence for individual developers.',
-			useCase: 'For solo developers.',
-			note: 'Students receive 75% off Personal.',
+			useCase: 'Solo developers.',
 			cta: { label: 'Buy license', href: '/get/', variant: 'neon' as const }
 		},
 		{
 			id: 'enterprise',
 			name: 'Enterprise',
-			priceLines: ['$49/month per seat', '$499/year per seat', '$2,500/year unlimited seats'],
+			image: '/media/pricing-enterprise.jpg',
+			pricePrimary: '$49/mo per seat',
+			priceSecondary: '$499/yr seat - $2,500/yr unlimited',
 			description: 'Full governance across agents, repos, and delivery pipelines.',
-			useCase: 'For teams and companies.',
-			note: null as string | null,
+			useCase: 'Teams and companies.',
 			cta: { label: 'Buy license', href: '/get/', variant: 'primary' as const }
 		}
 	];
 </script>
 
-<section id="tiers" class="scroll-mt-20 pb-14 pt-8 sm:pb-16 sm:pt-10">
+<section id="tiers" class="scroll-mt-16 pb-12 pt-6 sm:pb-14 sm:pt-8">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-		<!--
-			Subgrid locks name / price / note / description / use-case / CTA rows
-			level across all three cards on tablet+.
-		-->
-		<div
-			class="grid grid-cols-1 gap-4 min-[720px]:grid-cols-3 min-[720px]:gap-5 min-[720px]:grid-rows-[auto_auto_auto_auto_auto_minmax(0,1fr)_auto]"
-		>
+		<div class="grid grid-cols-1 items-stretch gap-4 min-[720px]:grid-cols-3 min-[720px]:gap-5">
 			{#each tiers as tier (tier.id)}
 				<article
-					class={`grid min-w-0 grid-rows-[auto_auto_auto_auto_auto_1fr_auto] gap-y-3 rounded-2xl border p-5 sm:p-6 min-[720px]:row-span-7 min-[720px]:grid-rows-subgrid min-[720px]:gap-y-0 ${
+					class={`flex min-w-0 flex-col overflow-hidden rounded-2xl border ${
 						tier.id === 'personal'
-							? 'border-cyan-400/35 bg-gradient-to-b from-cyan-950/40 to-[#0a1018] shadow-[0_24px_60px_rgba(34,211,238,0.08)]'
+							? 'border-cyan-400/35 bg-gradient-to-b from-cyan-950/30 to-[#0a1018] shadow-[0_20px_50px_rgba(34,211,238,0.1)]'
 							: 'border-white/10 bg-white/[0.02]'
 					}`}
 				>
-					<h2 class="text-lg font-semibold text-white">{tier.name}</h2>
+					<div class="relative h-28 shrink-0 sm:h-32">
+						<img
+							src={`${base}${tier.image}`}
+							alt=""
+							class="h-full w-full object-cover opacity-80"
+						/>
+						<div
+							class="absolute inset-0 bg-gradient-to-t from-[#0a1018] via-[#0a1018]/40 to-transparent"
+						></div>
+					</div>
 
-					<div class="space-y-1 self-start pt-1">
-						{#each tier.priceLines as line, i (line)}
-							<p
-								class={i === 0
-									? 'text-xl font-semibold tracking-tight text-white sm:text-2xl'
-									: 'text-sm text-slate-400'}
+					<div class="flex flex-1 flex-col p-5">
+						<h2 class="text-lg font-semibold text-white">{tier.name}</h2>
+
+						<div class="mt-3 flex h-[3.25rem] flex-col justify-start gap-0.5">
+							<p class="text-xl font-semibold tracking-tight text-white">{tier.pricePrimary}</p>
+							{#if tier.priceSecondary}
+								<p class="text-xs leading-snug text-slate-400">{tier.priceSecondary}</p>
+							{/if}
+						</div>
+
+						<p class="mt-4 text-sm leading-snug text-slate-300">{tier.description}</p>
+						<p class="mt-1.5 text-sm text-slate-500">{tier.useCase}</p>
+
+						<div class="mt-5">
+							<Button href={href(tier.cta.href)} variant={tier.cta.variant} class="w-full"
+								>{tier.cta.label}</Button
 							>
-								{line}
-							</p>
-						{/each}
-					</div>
-
-					<div class="min-h-[1.25rem] pt-1">
-						{#if tier.note}
-							<p class="text-xs text-cyan-300/90" title={tier.note}>{tier.note}</p>
-						{/if}
-					</div>
-
-					<p class="pt-2 text-sm leading-snug text-slate-300">{tier.description}</p>
-					<p class="text-sm text-slate-500">{tier.useCase}</p>
-
-					<div class="min-h-4" aria-hidden="true"></div>
-
-					<div class="pt-2">
-						<Button href={href(tier.cta.href)} variant={tier.cta.variant} class="w-full"
-							>{tier.cta.label}</Button
-						>
+						</div>
 					</div>
 				</article>
 			{/each}

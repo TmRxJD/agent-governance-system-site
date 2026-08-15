@@ -9,7 +9,7 @@ test.describe('AGS pricing page', () => {
 		await expect(page.getByRole('heading', { name: 'Free', exact: true }).first()).toBeVisible();
 		await expect(page.getByRole('heading', { name: 'Personal', exact: true }).first()).toBeVisible();
 		await expect(page.getByRole('heading', { name: 'Enterprise', exact: true }).first()).toBeVisible();
-		await expect(page.getByText('Students receive 75% off Personal.', { exact: true })).toBeVisible();
+		await expect(page.getByText(/Students 75% off/i)).toBeVisible();
 		await expect(page.getByRole('link', { name: 'Buy license' }).first()).toBeVisible();
 		await expect(page.getByText(/Feature comparison/i)).toBeVisible();
 		await expect(page.locator('body')).not.toContainText(/\bTower\b/);

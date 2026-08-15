@@ -38,12 +38,12 @@
 	];
 </script>
 
-<section id="compare" class="scroll-mt-20 border-y border-white/[0.06] bg-black/25 py-16 sm:py-20">
+<section id="compare" class="scroll-mt-16 border-y border-white/[0.06] bg-black/25 py-12 sm:py-14">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-		<h2 class="text-2xl font-semibold tracking-tight text-white">Feature comparison</h2>
-		<p class="mt-2 text-sm text-slate-500">What each tier unlocks.</p>
+		<h2 class="text-xl font-semibold tracking-tight text-white">Feature comparison</h2>
+		<p class="mt-1 text-sm text-slate-500">What each tier unlocks.</p>
 
-		<div class="mt-10 overflow-x-auto rounded-2xl border border-white/10">
+		<div class="mt-6 overflow-x-auto rounded-2xl border border-white/10">
 			<table class="w-full min-w-[36rem] border-collapse text-left text-sm">
 				<thead>
 					<tr class="border-b border-white/10 bg-white/[0.03]">
@@ -92,3 +92,4 @@
 		</div>
 	</div>
 </section>
+
