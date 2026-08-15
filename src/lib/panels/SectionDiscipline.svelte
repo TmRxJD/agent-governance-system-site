@@ -1,72 +1,88 @@
 <script lang="ts">
 	import ComparePanel from './ComparePanel.svelte';
 
-	const beforeLines = [
-		{ text: 'agent: rewrite AuthService “cleaner”', tone: 'warn' as const },
-		{ text: '→ renames helpers inconsistently', tone: 'bad' as const },
-		{ text: '→ drops yesterday’s error-shape decision', tone: 'bad' as const },
-		{ text: '→ invents a new folder for the same concern', tone: 'bad' as const },
-		{ text: '→ style drifts from the rest of the module', tone: 'bad' as const },
-		{ text: '→ “looks fine” — invariants quietly broken', tone: 'bad' as const }
+	const beforeItems = [
+		{
+			title: 'Inconsistent reasoning across tasks',
+			body: 'The agent solves the same problem differently depending on the prompt, the day, or the surrounding conversation. Patterns don’t persist.'
+		},
+		{
+			title: 'Symptom-level fixes instead of real corrections',
+			body: 'It patches issues in multiple files instead of repairing the underlying abstraction. The bug disappears temporarily, then resurfaces somewhere else.'
+		},
+		{
+			title: 'Parallel implementations of the same concept',
+			body: 'It re-implements logic that already exists because it didn’t recall the earlier decision or didn’t see the file. Now the project has competing versions of the same idea.'
+		},
+		{
+			title: 'Partial refactors that leave invariants broken',
+			body: 'It updates some call sites for a renamed function and forgets the rest. The code compiles, but the behavior is fractured.'
+		},
+		{
+			title: 'Silent contract drift',
+			body: 'It changes a return type or field name because it “seemed clearer,” breaking downstream consumers that were never updated.'
+		},
+		{
+			title: 'Invented structure when context is missing',
+			body: 'When the agent doesn’t have the right files, it guesses. Those guesses become new modules, shapes, and flows that don’t match the project’s architecture.'
+		}
 	];
 
-	const afterLines = [
-		{ text: 'agent: change AuthService under scope', tone: 'ok' as const },
-		{ text: '→ Commit-Scope: single-change', tone: 'ok' as const },
-		{ text: '→ reuses the builder it created earlier', tone: 'ok' as const },
-		{ text: '→ checks semantic graph before renaming', tone: 'ok' as const },
-		{ text: '→ canonical path required — no new orphan folder', tone: 'ok' as const },
-		{ text: '→ policy + enforcement: drift outside rules blocked', tone: 'ok' as const }
+	const afterItems = [
+		{
+			title: 'Stable architectural memory',
+			body: 'Naming, invariants, and rules stay consistent across tasks and sessions. Agents don’t drift.'
+		},
+		{
+			title: 'Root-level corrections',
+			body: 'Semantic graphs show where a concept lives and how it’s used. Fixes happen at the right abstraction, not scattered across call sites.'
+		},
+		{
+			title: 'Reuse of established patterns',
+			body: 'Builders, helpers, and abstractions created earlier become part of the agent’s working vocabulary. No more parallel implementations.'
+		},
+		{
+			title: 'Complete refactors',
+			body: 'When a concept changes, AGS ensures all dependent locations update together. No half-migrated logic.'
+		},
+		{
+			title: 'Contract consistency across modules',
+			body: 'Schemas and canonical sources prevent silent type drift. If a field changes, the entire project aligns.'
+		},
+		{
+			title: 'Automatic context retrieval',
+			body: 'Agents pull the files they need instead of guessing or inventing structure. Decisions are made with full visibility.'
+		}
 	];
 </script>
 
-<section id="discipline" class="scroll-mt-20 border-t border-white/[0.06] py-20 sm:py-28">
-	<div class="mx-auto max-w-6xl px-4">
+<section id="discipline" class="scroll-mt-20 border-t border-white/[0.06] py-12 sm:py-16">
+	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 		<p class="text-sm font-medium text-cyan-300/90">1 · Agent Discipline & Drift Prevention</p>
-		<h2 class="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-			From vibe coding to governed agent work.
+		<h2 class="mt-2 max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+			AI coding breaks down in ways that aren’t obvious — until they cost you hours.
 		</h2>
-		<p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-400">
-			Ungoverned agents rewrite history of decisions as they go. AGS keeps scope, meaning, builders, and policy
-			in force so the same agent stays consistent over time.
+		<p class="mt-3 max-w-3xl text-base leading-relaxed text-slate-400">
+			Ungoverned agents don’t fail loudly. They fail in subtle, compounding ways that look correct in isolation
+			but fracture the project over time.
 		</p>
 
-		<div class="mt-10 grid gap-4 lg:grid-cols-2" data-ags-demo="discipline">
+		<div class="mt-8 grid gap-4 lg:grid-cols-2" data-ags-demo="discipline">
 			<ComparePanel
 				variant="before"
-				title="AI coding without AGS"
-				subtitle="Session log"
-				lines={beforeLines}
-				footer="Inconsistent. Forgetful. Structure drifts."
+				heading="AI coding without AGS"
+				items={beforeItems}
+				closing="These failures accumulate. They create long-term debt. They slow every future change."
 			/>
 			<ComparePanel
 				variant="after"
-				title="AI coding with AGS"
-				subtitle="Governed session"
-				lines={afterLines}
-				footer="Scoped. Consistent. Deterministic."
+				heading="AI coding with AGS"
+				items={afterItems}
+				closing="This is what disciplined AI coding looks like."
 			/>
 		</div>
-
-		<div class="mt-8 grid gap-4 sm:grid-cols-3">
-			<div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-				<p class="text-xs tracking-wide text-slate-500 uppercase">Semantic graph</p>
-				<p class="mt-2 text-sm text-slate-300">
-					Agents reference concepts and constraints they already established — not reinvent names each turn.
-				</p>
-			</div>
-			<div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-				<p class="text-xs tracking-wide text-slate-500 uppercase">Builder reuse</p>
-				<p class="mt-2 text-sm text-slate-300">
-					Patterns the agent built earlier stay available and preferred over one-off rewrites.
-				</p>
-			</div>
-			<div class="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-				<p class="text-xs tracking-wide text-slate-500 uppercase">Enforcement</p>
-				<p class="mt-2 text-sm text-slate-300">
-					Sentinel and policy stop work that violates scope, meaning, or project rules.
-				</p>
-			</div>
-		</div>
+		<p class="mt-4 max-w-3xl text-sm leading-relaxed text-slate-500">
+			AGS forces agents to behave like part of the engineering system, not a free-floating text generator.
+		</p>
 	</div>
 </section>

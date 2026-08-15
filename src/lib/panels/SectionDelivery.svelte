@@ -1,102 +1,73 @@
 <script lang="ts">
-	const commitsBefore = [
-		{ text: 'wip', bad: true },
-		{ text: 'fix stuff', bad: true },
-		{ text: 'asdf', bad: true },
-		{ text: 'update files + config + docs', bad: true },
-		{ text: 'final????', bad: true }
-	];
-	const commitsAfter = [
-		{ text: 'status/checkpoint(auth): fix token parse', bad: false },
-		{ text: '  Commit-Scope: single-change', bad: false },
-		{ text: 'status/checkpoint(docs): add pointer rule', bad: false },
-		{ text: '  Commit-Scope: file-create', bad: false },
-		{ text: 'status/checkpoint(schema): align user array', bad: false }
+	import ComparePanel from './ComparePanel.svelte';
+
+	const beforeItems = [
+		{
+			title: 'Commit history with no intent',
+			body: 'Messages like “quick fix”, “temp change”, “update stuff”, “final-final-auth” make it impossible to understand what happened or safely revert anything.'
+		},
+		{
+			title: 'Version numbers that don’t reflect reality',
+			body: 'Patch-level changes become minor versions. Breaking changes slip into patch releases. Hotfixes override semantic meaning.'
+		},
+		{
+			title: 'Direct-to-production deployments',
+			body: 'Changes go from laptop → prod with no structured gates, no health checks, and no rollback plan.'
+		},
+		{
+			title: 'Artifacts with unclear provenance',
+			body: 'Builds named “build.zip” or “final-prod.zip” appear in the registry with no integrity guarantees.'
+		}
 	];
 
-	const versionsBefore = ['0.1.0', '0.1.0-fix', 'v2', '0.1.3?', 'prod-hotfix'];
-	const versionsAfter = ['0.1.0', '0.1.1  patch', '0.2.0  minor', '1.0.0  major'];
-
-	const deployBefore = ['laptop → production', 'no health gate', 'no rollback plan', 'artifact: “build.zip”'];
-	const deployAfter = [
-		'dev → bench → staging → prod',
-		'health required before promote',
-		'rollback path retained',
-		'artifact + registry integrity checked'
+	const afterItems = [
+		{
+			title: 'Scoped, reversible commits',
+			body: 'Every change has a clear scope and a clear intent. History becomes readable and safe to navigate.'
+		},
+		{
+			title: 'Predictable versioning',
+			body: 'Patch, minor, and major changes follow strict rules. Version numbers match the kind of change.'
+		},
+		{
+			title: 'Governed environment pipeline',
+			body: 'dev → bench → staging → prod. Each stage requires health and policy checks before promotion.'
+		},
+		{
+			title: 'Rollback paths defined per version',
+			body: 'If staging fails, the system knows exactly how to revert safely.'
+		},
+		{
+			title: 'Artifact and registry integrity',
+			body: 'Artifacts are validated, signed, and tracked. Nothing ambiguous enters production.'
+		}
 	];
 </script>
 
-<section id="delivery" class="scroll-mt-20 border-t border-white/[0.06] py-20 sm:py-28">
-	<div class="mx-auto max-w-6xl px-4">
+<section id="delivery" class="scroll-mt-20 border-t border-white/[0.06] py-12 sm:py-16">
+	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 		<p class="text-sm font-medium text-fuchsia-300/90">3 · Governed Delivery</p>
-		<h2 class="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-			Software ships safely and predictably.
+		<h2 class="mt-2 max-w-3xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+			Shipping shouldn’t be a separate gamble — it should follow the same rules as the rest of the system.
 		</h2>
-		<p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-400">
-			Commits, versions, environments, artifacts, and releases stay under the same governance — not a separate
-			hopeful process.
+		<p class="mt-3 max-w-3xl text-base leading-relaxed text-slate-400">
+			AI-assisted development often produces code quickly, but delivery becomes a fragile, ad-hoc process. AGS
+			governs commits, versions, environments, artifacts, and releases under one unified model.
 		</p>
 
-		<div class="mt-10 grid gap-4 lg:grid-cols-3" data-ags-demo="delivery">
-			<!-- Commits -->
-			<div class="overflow-hidden rounded-2xl border border-white/10 bg-[#080b12]">
-				<div class="border-b border-white/10 px-4 py-2.5">
-					<p class="text-xs text-slate-500">Commit history</p>
-					<p class="text-sm text-white">Before → After</p>
-				</div>
-				<div class="grid grid-cols-2 gap-0 text-[11px]">
-					<ul class="space-y-1 border-r border-white/10 p-3 font-mono text-fuchsia-300/85">
-						{#each commitsBefore as c}
-							<li>{c.text}</li>
-						{/each}
-					</ul>
-					<ul class="space-y-1 p-3 font-mono text-cyan-200/90">
-						{#each commitsAfter as c}
-							<li>{c.text}</li>
-						{/each}
-					</ul>
-				</div>
-			</div>
-
-			<!-- Versions -->
-			<div class="overflow-hidden rounded-2xl border border-white/10 bg-[#080b12]">
-				<div class="border-b border-white/10 px-4 py-2.5">
-					<p class="text-xs text-slate-500">Versioning</p>
-					<p class="text-sm text-white">Before → After</p>
-				</div>
-				<div class="grid grid-cols-2 gap-0 text-[11px]">
-					<ul class="space-y-1 border-r border-white/10 p-3 font-mono text-fuchsia-300/85">
-						{#each versionsBefore as v}
-							<li>{v}</li>
-						{/each}
-					</ul>
-					<ul class="space-y-1 p-3 font-mono text-cyan-200/90">
-						{#each versionsAfter as v}
-							<li>{v}</li>
-						{/each}
-					</ul>
-				</div>
-			</div>
-
-			<!-- Deploy -->
-			<div class="overflow-hidden rounded-2xl border border-white/10 bg-[#080b12]">
-				<div class="border-b border-white/10 px-4 py-2.5">
-					<p class="text-xs text-slate-500">Deployment</p>
-					<p class="text-sm text-white">Before → After</p>
-				</div>
-				<div class="grid grid-cols-2 gap-0 text-[11px]">
-					<ul class="space-y-1 border-r border-white/10 p-3 font-mono text-fuchsia-300/85">
-						{#each deployBefore as d}
-							<li>{d}</li>
-						{/each}
-					</ul>
-					<ul class="space-y-1 p-3 font-mono text-cyan-200/90">
-						{#each deployAfter as d}
-							<li>{d}</li>
-						{/each}
-					</ul>
-				</div>
-			</div>
+		<div class="mt-8 grid gap-4 lg:grid-cols-2" data-ags-demo="delivery">
+			<ComparePanel
+				variant="before"
+				heading="Delivery — Before AGS"
+				items={beforeItems}
+				closing="Delivery becomes guesswork."
+			/>
+			<ComparePanel
+				variant="after"
+				heading="Delivery — With AGS"
+				items={afterItems}
+				closing="Delivery becomes predictable."
+			/>
 		</div>
 	</div>
 </section>

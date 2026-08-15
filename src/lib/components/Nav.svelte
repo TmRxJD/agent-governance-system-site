@@ -15,7 +15,7 @@
 </script>
 
 <header class="sticky top-0 z-50 border-b border-white/[0.06] bg-[#06080f]/75 backdrop-blur-xl">
-	<div class="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
+	<div class="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
 		<a href={href('/')} class="flex items-center gap-2 text-sm font-semibold text-white">
 			<span
 				class="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-cyan-400/25 to-violet-500/25 text-[10px] text-cyan-100"
