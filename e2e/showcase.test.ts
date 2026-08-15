@@ -1,21 +1,22 @@
 import { expect, test } from '@playwright/test';
 
-test.describe('AGS home — one scene', () => {
-	test('explains problem and shows MCP path example', async ({ page }) => {
+test.describe('AGS capability pillars', () => {
+	test('hero and three pillars render', async ({ page }) => {
 		await page.goto('/');
 		await expect(
-			page.getByRole('heading', { name: /Rules for AI coding agents that cannot be skipped/i })
+			page.getByRole('heading', { name: /Turn chaotic AI-assisted development/i })
 		).toBeVisible();
-		await expect(page.getByText(/If governance lives only in a prompt/i)).toBeVisible();
-		await expect(page.locator('[data-ags-animation="mcp-path"]')).toBeVisible();
-		await expect(page.getByText('enforcement_begin')).toBeVisible();
+		await expect(page.locator('#discipline')).toBeVisible();
+		await expect(page.locator('#repo')).toBeVisible();
+		await expect(page.locator('#delivery')).toBeVisible();
+		await expect(page.locator('#engines')).toBeVisible();
+		await expect(page.getByText('Before AGS').first()).toBeVisible();
+		await expect(page.getByText('With AGS').first()).toBeVisible();
 	});
 
-	test('replay runs the scene', async ({ page }) => {
+	test('CTA scrolls to discipline', async ({ page }) => {
 		await page.goto('/');
-		await page.getByRole('button', { name: /Replay/i }).click();
-		await expect(page.getByText(/denied|accepted|Blocked|Legal commit/i).first()).toBeVisible({
-			timeout: 12000
-		});
+		await page.getByRole('link', { name: /See how AGS governs AI coding/i }).click();
+		await expect(page.locator('#discipline')).toBeInViewport();
 	});
 });
