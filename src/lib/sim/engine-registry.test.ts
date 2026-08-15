@@ -5,9 +5,9 @@ import { MOVIE_LABELS } from '$lib/animations/movie';
 import { get } from 'svelte/store';
 
 describe('engine-registry', () => {
-	it('lists 22 engines with required features', () => {
-		expect(ENGINES).toHaveLength(22);
-		expect(ENGINE_SLUGS).toHaveLength(22);
+	it('lists 24 engines with required features', () => {
+		expect(ENGINES).toHaveLength(24);
+		expect(ENGINE_SLUGS).toHaveLength(24);
 		for (const e of ENGINES) {
 			expect(e.features).toEqual(expect.arrayContaining(['animation', 'diagram', 'interaction']));
 			expect(getEngine(e.slug)?.title).toBe(e.title);

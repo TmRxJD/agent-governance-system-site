@@ -1,32 +1,36 @@
 <script lang="ts">
 	const faqs = [
 		{
+			q: 'How do I get a license key?',
+			a: 'Free uses install docs without a paid key. Personal and Enterprise go through Checkout — when payment succeeds you get an activate link (email) with a paste-to-AI prompt. You should not need to hunt for env files.'
+		},
+		{
 			q: 'What do I receive after checkout?',
-			a: 'A license key and access to install the private AGS package. Activate the key in your project config to unlock the tier you bought.'
+			a: 'An activate page link, a one-time setup token, and a signed license key. Open Activate, copy the activation prompt, paste it into your AI coding agent, and wait for “AGS ready.”'
+		},
+		{
+			q: 'Where do I manage an existing license?',
+			a: 'Use Account to check a key, look up licenses by email, or open the Stripe billing portal when commerce is connected. Re-open Activate anytime from your email link.'
+		},
+		{
+			q: 'Which payment providers are supported?',
+			a: 'The commerce layer is provider-agnostic. Stripe and PayPal adapters are scaffolded — enable one (or both) via Appwrite function env vars when you are ready to take payments.'
 		},
 		{
 			q: 'Can I upgrade or downgrade later?',
-			a: 'Yes. Checkout issues a new key for the new tier. Your previous key stops applying once you switch.'
-		},
-		{
-			q: 'Can I switch between monthly and yearly billing?',
-			a: 'Yes at renewal, or sooner by checking out the other cadence and using the new key. Unused time on the old plan is handled in Stripe.'
+			a: 'Yes once billing is live. A new checkout or portal session updates the license record and issues a replacement key for the new tier.'
 		},
 		{
 			q: 'Is the student discount only on Personal?',
-			a: 'Yes. Students get 75% off Personal. Enterprise seats are full price.'
+			a: 'Yes — 75% off Personal after verification. Verify via GitHub Student Developer Pack (preferred) or a school email at /students/, then checkout with the student toggle.'
 		},
 		{
 			q: 'Does AGS upload my source code?',
-			a: 'No. It runs on your machine against your repo. Checkout and license checks do not send project files.'
+			a: 'No. It runs on your machine against your repo. License authorize calls send only the key (and optional machine fingerprint), never project files.'
 		},
 		{
 			q: 'Do I need internet while coding?',
-			a: 'Day-to-day use is local. You only need network for install, license refresh, or optional online validation.'
-		},
-		{
-			q: 'What happens if I cancel?',
-			a: 'Access continues through the paid period, then falls back to Free entitlements. You keep your project; paid features lock until you renew.'
+			a: 'Day-to-day use is local. You need network for install, optional online authorize/refresh, or checkout.'
 		},
 		{
 			q: 'What’s the difference between per-seat and unlimited Enterprise?',

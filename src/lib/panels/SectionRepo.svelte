@@ -60,7 +60,6 @@
 <section id="repo" class="scroll-mt-20 border-y border-white/[0.06] bg-black/30 py-16 sm:py-24">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 		<SectionHeader
-			numeral="2"
 			title="Repo Governance & Structural Integrity"
 			subheading="Projects fall apart from slow structural drift — not one big mistake."
 			tone="violet"

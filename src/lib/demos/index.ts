@@ -20,6 +20,8 @@ export { default as PromotionDemo } from './PromotionDemo.svelte';
 export { default as HealthDemo } from './HealthDemo.svelte';
 export { default as ObservabilityDemo } from './ObservabilityDemo.svelte';
 export { default as RollbackDemo } from './RollbackDemo.svelte';
+export { default as EfficiencyDemo } from './EfficiencyDemo.svelte';
+export { default as ImpactDemo } from './ImpactDemo.svelte';
 export { default as OptimizationDemo } from './OptimizationDemo.svelte';
 export { default as ArtifactDemo } from './ArtifactDemo.svelte';
 export { default as RegistryDemo } from './RegistryDemo.svelte';
@@ -46,6 +48,8 @@ export const DEMO_COMPONENTS = {
 	health: 'HealthDemo',
 	observability: 'ObservabilityDemo',
 	rollback: 'RollbackDemo',
+	efficiency: 'EfficiencyDemo',
+	impact: 'ImpactDemo',
 	optimization: 'OptimizationDemo',
 	artifact: 'ArtifactDemo',
 	registry: 'RegistryDemo',

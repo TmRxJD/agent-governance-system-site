@@ -2,39 +2,9 @@
 	import Button from '$lib/ui/Button.svelte';
 	import { href } from '$lib/paths';
 	import { base } from '$app/paths';
+	import { PLAN_CATALOG } from '$lib/licensing/catalog';
 
-	const tiers = [
-		{
-			id: 'free',
-			name: 'Free',
-			image: '/media/pricing-free.jpg',
-			pricePrimary: '$0',
-			priceSecondary: null as string | null,
-			description: 'Core governance for agents and repos.',
-			useCase: 'Exploration and small personal projects.',
-			cta: { label: 'Get Free', href: '/get/', variant: 'ghost' as const }
-		},
-		{
-			id: 'personal',
-			name: 'Personal',
-			image: '/media/pricing-personal.jpg',
-			pricePrimary: '$12/mo',
-			priceSecondary: '$120/year - Students 75% off',
-			description: 'Full agent and repo intelligence for individual developers.',
-			useCase: 'Solo developers.',
-			cta: { label: 'Buy license', href: '/get/', variant: 'neon' as const }
-		},
-		{
-			id: 'enterprise',
-			name: 'Enterprise',
-			image: '/media/pricing-enterprise.jpg',
-			pricePrimary: '$49/mo per seat',
-			priceSecondary: '$499/yr seat - $2,500/yr unlimited',
-			description: 'Full governance across agents, repos, and delivery pipelines.',
-			useCase: 'Teams and companies.',
-			cta: { label: 'Buy license', href: '/get/', variant: 'primary' as const }
-		}
-	];
+	const tiers = PLAN_CATALOG.filter((p) => p.showOnPricing);
 </script>
 
 <section id="tiers" class="scroll-mt-16 pb-12 pt-6 sm:pb-14 sm:pt-8">
@@ -43,7 +13,7 @@
 			{#each tiers as tier (tier.id)}
 				<article
 					class={`flex min-w-0 flex-col overflow-hidden rounded-2xl border ${
-						tier.id === 'personal'
+						tier.pricingCardId === 'personal'
 							? 'border-cyan-400/35 bg-gradient-to-b from-cyan-950/30 to-[#0a1018] shadow-[0_20px_50px_rgba(34,211,238,0.1)]'
 							: 'border-white/10 bg-white/[0.02]'
 					}`}
@@ -63,9 +33,17 @@
 						<h2 class="text-lg font-semibold text-white">{tier.name}</h2>
 
 						<div class="mt-3 flex h-[3.25rem] flex-col justify-start gap-0.5">
-							<p class="text-xl font-semibold tracking-tight text-white">{tier.pricePrimary}</p>
+							<p class="text-xl font-semibold tracking-tight text-white">{tier.priceLabel}</p>
 							{#if tier.priceSecondary}
-								<p class="text-xs leading-snug text-slate-400">{tier.priceSecondary}</p>
+								<p class="text-xs leading-snug text-slate-400">
+									{#if tier.pricingCardId === 'personal'}
+										<a class="text-cyan-300/90 hover:underline" href={href('/students/')}
+											>Students 75% off — verify</a
+										>
+									{:else}
+										{tier.priceSecondary}
+									{/if}
+								</p>
 							{/if}
 						</div>
 
@@ -73,8 +51,8 @@
 						<p class="mt-1.5 text-sm text-slate-500">{tier.useCase}</p>
 
 						<div class="mt-auto pt-6">
-							<Button href={href(tier.cta.href)} variant={tier.cta.variant} class="w-full"
-								>{tier.cta.label}</Button
+							<Button href={href(tier.ctaHref)} variant={tier.ctaVariant} class="w-full"
+								>{tier.ctaLabel}</Button
 							>
 						</div>
 					</div>

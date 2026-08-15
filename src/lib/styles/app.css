@@ -26,9 +26,10 @@ body {
 	min-height: 100%;
 	font-family: var(--ags-font);
 	background:
-		radial-gradient(1200px 700px at 12% -10%, rgba(34, 211, 238, 0.12), transparent 55%),
-		radial-gradient(900px 600px at 90% 0%, rgba(167, 139, 250, 0.14), transparent 50%),
-		radial-gradient(800px 500px at 50% 100%, rgba(232, 121, 249, 0.08), transparent 45%),
+		radial-gradient(1400px 800px at 10% -15%, rgba(34, 211, 238, 0.18), transparent 55%),
+		radial-gradient(1000px 700px at 95% 5%, rgba(167, 139, 250, 0.2), transparent 52%),
+		radial-gradient(900px 600px at 50% 110%, rgba(232, 121, 249, 0.12), transparent 48%),
+		radial-gradient(600px 400px at 70% 40%, rgba(34, 211, 238, 0.06), transparent 60%),
 		var(--ags-bg);
 	color: var(--ags-fg);
 }

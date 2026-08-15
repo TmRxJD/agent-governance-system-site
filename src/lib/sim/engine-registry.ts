@@ -46,7 +46,8 @@ export const ENGINES: EngineMeta[] = [
 		slug: 'reflex-arcs',
 		title: 'Sentinel Reflex',
 		shortTitle: 'Sentinel',
-		blurb: 'Pain signals fire reflex arcs that block or remediate violations.',
+		blurb:
+			'Pain signals fire reflex arcs that deny raw git, force MCP commits, and clear only after real remediation — consistency with fewer wasted retries.',
 		wave: 'A',
 		semanticDomain: 'sentinel',
 		features: ['animation', 'diagram', 'interaction'],
@@ -151,6 +152,25 @@ export const ENGINES: EngineMeta[] = [
 		blurb: 'Rollback flow with version tracking visualization.',
 		wave: 'C',
 		semanticDomain: 'rollback',
+		features: ['animation', 'diagram', 'interaction']
+	},
+	{
+		slug: 'efficiency',
+		title: 'Efficiency Engine',
+		shortTitle: 'Efficiency',
+		blurb: 'Token budgets, loop prevention, and organic guardrails that make agents cheaper over time.',
+		wave: 'A',
+		semanticDomain: 'efficiency',
+		features: ['animation', 'diagram', 'interaction']
+	},
+	{
+		slug: 'impact',
+		title: 'Impact Engine',
+		shortTitle: 'Impact',
+		blurb:
+			'Growth auditor that proves the agent is getting smarter — curve-aware maturity, adversarial stress, no-op detection.',
+		wave: 'A',
+		semanticDomain: 'impact',
 		features: ['animation', 'diagram', 'interaction']
 	},
 	{

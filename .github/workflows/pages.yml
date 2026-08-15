@@ -33,6 +33,11 @@ jobs:
       - name: Build
         env:
           BASE_PATH: /agent-governance-system-site
+          PUBLIC_APPWRITE_ENDPOINT: https://appwrite.athyen.pl/v1
+          PUBLIC_APPWRITE_PROJECT_ID: 68190de700097b8f59df
+          PUBLIC_AGS_COMMERCE_FUNCTION_ID: ags-commerce
+          PUBLIC_AGS_PAYMENT_PROVIDER: stripe
+          PUBLIC_SITE_ORIGIN: https://tmrxjd.github.io/agent-governance-system-site
         run: pnpm build
       - name: Inventory (build)
         run: pnpm inventory:build

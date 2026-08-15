@@ -16,6 +16,10 @@
 			body: 'Laptop → prod. No gates. No rollback plan.'
 		},
 		{
+			title: 'No rehearsed path back',
+			body: 'Staging fails and the only option is hot-fix forward — or hope.'
+		},
+		{
 			title: 'Unclear artifact provenance',
 			body: '“final-prod.zip” with no integrity guarantees.'
 		}
@@ -48,7 +52,6 @@
 <section id="delivery" class="scroll-mt-20 py-16 sm:py-24">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 		<SectionHeader
-			numeral="3"
 			title="Governed Delivery"
 			subheading="Shipping shouldn’t be a separate gamble — it should follow the same rules."
 			tone="magenta"

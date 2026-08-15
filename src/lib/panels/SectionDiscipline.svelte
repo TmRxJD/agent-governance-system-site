@@ -60,7 +60,6 @@
 <section id="discipline" class="scroll-mt-20 py-16 sm:py-24">
 	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 		<SectionHeader
-			numeral="1"
 			title="Agent Discipline & Drift Prevention"
 			subheading="AI coding breaks down in ways that aren’t obvious — until they cost you hours."
 			tone="cyan"

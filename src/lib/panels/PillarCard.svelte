@@ -8,7 +8,7 @@
 	let { variant, title, body }: Props = $props();
 </script>
 
-<article class="border-b border-white/[0.06] py-4 last:border-b-0">
+<article class="border-0 py-4">
 	<div class="flex gap-3">
 		<span
 			class={`mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full ${

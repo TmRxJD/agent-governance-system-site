@@ -12,9 +12,11 @@ test.describe('AGS pricing page', () => {
 		await expect(page.locator('body')).not.toContainText(/Many teams find/i);
 		await expect(page.locator('body')).not.toContainText(/Who it’s for/i);
 		await expect(page.getByText(/Cost & usage/i).first()).toBeVisible();
-		await expect(page.getByText(/What do I receive after checkout/i)).toBeVisible();
-		await expect(page.getByRole('link', { name: 'Buy license' }).first()).toBeVisible();
+		await expect(page.getByText(/How do I get a license key/i)).toBeVisible();
+		await expect(page.getByRole('link', { name: 'Buy Personal' })).toBeVisible();
+		await expect(page.getByRole('link', { name: 'Buy Enterprise' })).toBeVisible();
 		await expect(page.locator('body')).not.toContainText(/\bTower\b/);
+		await expect(page.locator('body')).not.toContainText(/Community/i);
 		await expect(page.locator('body')).not.toContainText(/Contact Sales/i);
 	});
 });

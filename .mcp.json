@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "tower-gov": {
+      "command": "node",
+      "args": [
+        "C:/Users/jdion/Projects/TrackerWebsite/the-tower-run-tracker/tools/tower-mcp/gov-server.mjs"
+      ],
+      "cwd": "C:/Users/jdion/Projects/AgentGovernanceSystem-Site",
+      "env": {
+        "TOWER_GOV_REPO_ROOT": "C:/Users/jdion/Projects/AgentGovernanceSystem-Site",
+        "TOWER_SLIM_CATALOG_REV": "2026-08-15-sentinel1"
+      }
+    }
+  }
+}
