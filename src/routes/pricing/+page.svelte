@@ -3,7 +3,6 @@
 	import TierCards from '$lib/panels/pricing/TierCards.svelte';
 	import TokenEfficiency from '$lib/panels/pricing/TokenEfficiency.svelte';
 	import FeatureComparison from '$lib/panels/pricing/FeatureComparison.svelte';
-	import WhoItsFor from '$lib/panels/pricing/WhoItsFor.svelte';
 	import PricingFaq from '$lib/panels/pricing/PricingFaq.svelte';
 	import { href } from '$lib/paths';
 </script>
@@ -21,7 +20,6 @@
 	<TierCards />
 	<TokenEfficiency />
 	<FeatureComparison />
-	<WhoItsFor />
 	<PricingFaq />
 
 	<footer class="border-t border-white/[0.06] px-4 py-10 sm:px-6 lg:px-8">

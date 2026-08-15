@@ -72,7 +72,7 @@
 						<p class="mt-4 text-sm leading-snug text-slate-300">{tier.description}</p>
 						<p class="mt-1.5 text-sm text-slate-500">{tier.useCase}</p>
 
-						<div class="mt-5">
+						<div class="mt-auto pt-6">
 							<Button href={href(tier.cta.href)} variant={tier.cta.variant} class="w-full"
 								>{tier.cta.label}</Button
 							>

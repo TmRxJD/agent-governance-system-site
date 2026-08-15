@@ -37,9 +37,5 @@
 				</div>
 			{/each}
 		</div>
-
-		<p class="mt-8 text-center text-base font-medium text-cyan-200/95 sm:text-lg">
-			Many teams find AGS costs less than the tokens it saves.
-		</p>
 	</div>
 </section>

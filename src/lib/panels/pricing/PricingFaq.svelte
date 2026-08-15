@@ -1,32 +1,36 @@
 <script lang="ts">
 	const faqs = [
 		{
-			q: 'Can I use AGS commercially on the Free tier?',
-			a: 'Free is for exploration and small personal projects. Commercial production use requires Personal or Enterprise.'
+			q: 'What do I receive after checkout?',
+			a: 'A license key and access to install the private AGS package. Activate the key in your project config to unlock the tier you bought.'
 		},
 		{
-			q: 'What happens if I upgrade from Free to Personal?',
-			a: 'You receive a new license key with Personal entitlements. Existing Free keys remain valid until you switch.'
+			q: 'Can I upgrade or downgrade later?',
+			a: 'Yes. Checkout issues a new key for the new tier. Your previous key stops applying once you switch.'
 		},
 		{
-			q: 'How is Enterprise billed?',
-			a: 'Monthly or yearly per seat, or a yearly unlimited-seat option — paid through Stripe checkout.'
+			q: 'Can I switch between monthly and yearly billing?',
+			a: 'Yes at renewal, or sooner by checking out the other cadence and using the new key. Unused time on the old plan is handled in Stripe.'
 		},
 		{
-			q: 'Can I cancel at any time?',
-			a: 'Yes. Cancel anytime. Access continues through the paid period, then reverts to Free entitlements.'
+			q: 'Is the student discount only on Personal?',
+			a: 'Yes. Students get 75% off Personal. Enterprise seats are full price.'
 		},
 		{
-			q: 'Does AGS store my code?',
-			a: 'No. AGS runs against your repo locally. Licensing validates entitlement — it does not upload source.'
+			q: 'Does AGS upload my source code?',
+			a: 'No. It runs on your machine against your repo. Checkout and license checks do not send project files.'
 		},
 		{
-			q: 'How do student discounts work?',
-			a: 'Verified students receive 75% off Personal. Apply the student option during Stripe checkout.'
+			q: 'Do I need internet while coding?',
+			a: 'Day-to-day use is local. You only need network for install, license refresh, or optional online validation.'
 		},
 		{
-			q: 'How does AGS reduce token cost?',
-			a: 'It cuts the expensive part of AI coding: retries, confusion, and re-explaining your project. Sessions stay shorter and more useful.'
+			q: 'What happens if I cancel?',
+			a: 'Access continues through the paid period, then falls back to Free entitlements. You keep your project; paid features lock until you renew.'
+		},
+		{
+			q: 'What’s the difference between per-seat and unlimited Enterprise?',
+			a: 'Per-seat bills each active seat monthly or yearly. Unlimited is a flat yearly option when you don’t want to count seats.'
 		}
 	];
 </script>
@@ -36,7 +40,7 @@
 		<h2 class="text-xl font-semibold tracking-tight text-white">FAQ</h2>
 		<dl class="mt-6 space-y-5">
 			{#each faqs as item (item.q)}
-				<div class="border-b border-white/[0.06] pb-6">
+				<div class="border-b border-white/[0.06] pb-6 last:border-b-0">
 					<dt class="text-sm font-semibold text-white">{item.q}</dt>
 					<dd class="mt-2 text-sm leading-snug text-slate-400">{item.a}</dd>
 				</div>
@@ -44,4 +48,3 @@
 		</dl>
 	</div>
 </section>
-
