@@ -1,0 +1,11 @@
+status/checkpoint(ags-site): scaffold public docs site and Pages workflow
+
+Status: checkpoint
+Scope: ags-site
+Commit-Scope: file-create
+Not-done: Pages enable in GitHub settings if needed; richer docs
+Next: monorepo distribution docs update
+Evidence: site/ + licensing/buy/tower-community; zero packages/*/src
+Token: ags-dist
+Graph-ids: concept:license-commercial,concept:license-tower-community
+User-approved: no

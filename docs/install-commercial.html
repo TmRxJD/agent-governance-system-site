@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Commercial install — AGS</title>
+  <link rel="stylesheet" href="../site/styles.css" />
+</head>
+<body>
+  <main>
+    <h1>Install — commercial</h1>
+    <ol>
+      <li>Obtain a paid commercial license and package access.</li>
+      <li>Create a GitHub PAT with <code>read:packages</code>.</li>
+      <li>Add to your project <code>.npmrc</code>:</li>
+    </ol>
+    <pre>@tmrxjd:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${AGS_NPM_TOKEN}</pre>
+    <pre>pnpm add @tmrxjd/agent-governance-system</pre>
+    <p>Never commit real tokens. Prefer environment substitution.</p>
+    <p><a href="../site/index.html">Home</a></p>
+  </main>
+</body>
+</html>

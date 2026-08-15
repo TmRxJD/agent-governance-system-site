@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AGS architecture</title>
+  <link rel="stylesheet" href="../site/styles.css" />
+</head>
+<body>
+  <main>
+    <p class="brand">Agent Governance System</p>
+    <h1>Architecture overview</h1>
+    <p>AGS is a mechanics-agnostic governance stack for AI agents: commit authorization (CAP),
+      atomic staging scopes, schema/pointer/semantic muscles, testing &amp; performance suites,
+      and sentinel reflexes — including dual-license enforcement.</p>
+    <h2>Distribution</h2>
+    <pre>private repo (code)
+    → GitHub Packages (@tmrxjd/agent-governance-system)
+    → commercial buyers / Tower community tokens
+
+public site (this repo)
+    → docs / buy / tower onboarding only</pre>
+    <h2>Governance pipeline (high level)</h2>
+    <pre>enforcement_begin
+  → staging_*
+  → confidence_*
+  → schema_* / pointer_*
+  → commit_checkpoint</pre>
+    <p>See also <a href="../mermaid/pipeline.mmd">pipeline mermaid</a> and
+      <a href="../examples/">examples</a>.</p>
+    <p><a href="../site/index.html">Home</a></p>
+  </main>
+</body>
+</html>

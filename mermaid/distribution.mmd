@@ -1,0 +1,11 @@
+flowchart LR
+  privateRepo[agent-governance-system PRIVATE]
+  publicSite[agent-governance-system-site PUBLIC]
+  ghpkg[GitHubPackages @tmrxjd/agent-governance-system]
+  buyers[Commercial buyers]
+  towerUsers[Tower Community]
+  privateRepo -->|publish| ghpkg
+  buyers -->|paid token| ghpkg
+  towerUsers -->|community token| ghpkg
+  publicSite -->|docs only| buyers
+  publicSite -->|docs only| towerUsers

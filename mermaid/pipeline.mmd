@@ -1,0 +1,8 @@
+flowchart TD
+  begin[enforcement_begin]
+  staging[staging_enforce]
+  confidence[confidence_enforce]
+  schema[schema_enforce]
+  pointer[pointer_enforce]
+  commit[commit_checkpoint]
+  begin --> staging --> confidence --> schema --> pointer --> commit
