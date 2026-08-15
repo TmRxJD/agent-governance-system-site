@@ -8,24 +8,24 @@
 	<div class="max-w-xl">
 		<h1 class="text-3xl font-semibold tracking-tight">Get AGS</h1>
 		<p class="mt-3 text-slate-400">
-			Private package on GitHub Packages. Commercial or Tower Community.
+			Choose a tier, then install the private package from GitHub Packages.
 		</p>
 	</div>
 	<div class="grid gap-4 md:grid-cols-2">
 		<GlassPanel>
-			<h2 class="text-lg font-semibold text-cyan-200">Commercial</h2>
-			<p class="mt-2 text-sm text-slate-400">Paid license for production use.</p>
+			<h2 class="text-lg font-semibold text-cyan-200">Pricing</h2>
+			<p class="mt-2 text-sm text-slate-400">Free, Personal, and Enterprise — features and cost.</p>
 			<div class="mt-5 flex flex-wrap gap-2">
-				<Button href={href('/buy/')} variant="neon">Buy</Button>
+				<Button href={href('/pricing/')} variant="neon">View pricing</Button>
 				<Button href={href('/docs/install-commercial/')} variant="ghost">Install</Button>
 			</div>
 		</GlassPanel>
 		<GlassPanel>
-			<h2 class="text-lg font-semibold text-violet-200">Tower Community</h2>
-			<p class="mt-2 text-sm text-slate-400">Free. Non-commercial. Tower-only.</p>
+			<h2 class="text-lg font-semibold text-violet-200">Sales & access</h2>
+			<p class="mt-2 text-sm text-slate-400">Invoicing, seats, and package access.</p>
 			<div class="mt-5 flex flex-wrap gap-2">
-				<Button href={href('/tower-community/')} variant="primary">Access</Button>
-				<Button href={href('/docs/install-tower/')} variant="ghost">Install</Button>
+				<Button href={href('/docs/')} variant="primary">Docs</Button>
+				<Button href={href('/licensing/')} variant="ghost">License terms</Button>
 			</div>
 		</GlassPanel>
 	</div>
