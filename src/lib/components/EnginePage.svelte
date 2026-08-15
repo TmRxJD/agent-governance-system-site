@@ -31,7 +31,7 @@
 	</header>
 
 	<section>
-		<p class="mb-3 text-xs font-semibold tracking-[0.2em] text-cyan-300/90 uppercase">Watch it work</p>
+		<p class="mb-3 text-xs font-semibold tracking-[0.2em] text-cyan-300/90 uppercase">In action</p>
 		{@render watch()}
 	</section>
 

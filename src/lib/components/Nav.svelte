@@ -3,41 +3,37 @@
 	import { href } from '$lib/paths';
 
 	const links = [
-		{ path: '/#commit-gate', label: 'How it works', match: 'home' },
-		{ path: '/#engines', label: 'Engines', match: 'engines' },
-		{ path: '/docs/', label: 'Docs', match: '/docs' },
-		{ path: '/get/', label: 'Get AGS', match: '/get' }
+		{ href: '/', label: 'Home', external: false },
+		{ href: '/docs/', label: 'Docs', external: false },
+		{ href: '/get/', label: 'Get AGS', external: false }
 	];
 
-	function active(match: string) {
-		const path = page.url.pathname;
-		if (match === 'home') return path === '/' || path.endsWith('/agent-governance-system-site/');
-		if (match === 'engines') return path.includes('/showcase');
-		return path.includes(match);
+	function isActive(path: string) {
+		const cur = page.url.pathname.replace(/\/$/, '') || '/';
+		if (path === '/') return cur === '/' || cur.endsWith('agent-governance-system-site');
+		return cur.includes(path.replace(/\/$/, ''));
 	}
 </script>
 
-<header class="sticky top-0 z-50 border-b border-white/10 bg-[#06080f]/75 backdrop-blur-xl">
-	<div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-		<a href={href('/')} class="flex items-center gap-2.5 font-semibold tracking-tight">
+<header class="sticky top-0 z-50 border-b border-white/[0.06] bg-[#06080f]/70 backdrop-blur-xl">
+	<div class="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
+		<a href={href('/')} class="flex items-center gap-2 text-sm font-semibold tracking-tight text-white">
 			<span
-				class="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-cyan-400/35 bg-cyan-400/10 text-[10px] font-bold tracking-wider text-cyan-200"
+				class="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-cyan-400/30 to-violet-500/30 text-[10px] text-cyan-100"
 				>AGS</span
 			>
-			<span class="hidden text-sm text-slate-200 sm:inline">Agent Governance System</span>
+			<span class="hidden sm:inline">Agent Governance</span>
 		</a>
-		<nav class="flex flex-wrap items-center gap-1">
-			{#each links as link (link.path)}
+		<nav class="flex items-center gap-1">
+			{#each links as link (link.href)}
 				<a
-					href={link.path.startsWith('/#') ? link.path : href(link.path)}
-					class={`rounded-lg px-3 py-1.5 text-sm transition ${
-						active(link.match)
+					href={href(link.href)}
+					class={`rounded-full px-3 py-1.5 text-sm transition ${
+						isActive(link.href)
 							? 'bg-white/10 text-white'
-							: 'text-slate-400 hover:bg-white/5 hover:text-slate-100'
-					}`}
+							: 'text-slate-400 hover:text-white'
+					}`}>{link.label}</a
 				>
-					{link.label}
-				</a>
 			{/each}
 		</nav>
 	</div>
